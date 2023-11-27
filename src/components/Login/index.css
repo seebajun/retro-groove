@@ -1,0 +1,28 @@
+body{
+    background-image: url("./img/Primera\ vista.jpg");
+    background-size: cover;
+}
+
+.card {
+    display: flex;
+    padding: 10px 100px 450px 2px;
+    margin-top: 100px;
+    margin-left: 1150px;
+    width: 500px;
+    height: 700px;
+}
+
+.card-body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content:left;
+    align-items: center;
+}
+
+.caed-body button{
+    display: flex;
+    align-items: center;
+
+}
