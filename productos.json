@@ -1,0 +1,37 @@
+[
+    {
+      "id": 1,
+      "nombre": "Producto 1",
+      "descripcion": "Descripción del Producto 1.",
+      "url": "https://dojiw2m9tvv09.cloudfront.net/41657/product/X_1850117-28048004736.jpg?48&time=1701129528",
+      "precio": 19.99
+    },
+    {
+      "id": 2,
+      "nombre": "Producto 2",
+      "descripcion": "Descripción del Producto 2.",
+      "url": "https://dojiw2m9tvv09.cloudfront.net/41657/product/X_34054240982.jpg?48&time=1701129561",
+      "precio": 29.99
+    },
+    {
+      "id": 3,
+      "nombre": "Producto 3",
+      "descripcion": "Descripción del Producto 3.",
+      "url": "https://dojiw2m9tvv09.cloudfront.net/41657/product/X_34054240982.jpg?48&time=1701129561",
+      "precio": 39.99
+    },
+    {
+      "id": 4,
+      "nombre": "Producto 4",
+      "descripcion": "Descripción del Producto 4.",
+      "url": "https://dojiw2m9tvv09.cloudfront.net/41657/product/X_34054240982.jpg?48&time=1701129561",
+      "precio": 49.99
+    },
+    {
+      "id": 5,
+      "nombre": "Producto 5",
+      "descripcion": "Descripción del Producto 5.",
+      "url": "https://dojiw2m9tvv09.cloudfront.net/41657/product/X_34054240982.jpg?48&time=1701129561",
+      "precio": 59.99
+    }
+  ]
