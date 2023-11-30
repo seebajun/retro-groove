@@ -1,7 +1,8 @@
 import React from "react";
-// import Login from "./views/Landing/Login";
+import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Context from "./context/index";
+
 //componentes
 import Navbar from "./components/Navbar/index.jsx";
 
@@ -12,21 +13,30 @@ import Perfil from "./views/Perfil/Perfil.jsx";
 import Producto from "./views/Producto/Producto.jsx";
 import Registrarse from "./views/Registrarse/Registrarse.jsx";
 import Vender from "./views/Vender/Vender.js";
-import Carrito from "./views/Carrito/carrito.jsx";
+import Carrito from "./views/Carrito/Carrito.jsx";
 
 function App() {
+  //cargue el archivo de productos
+  const productos = require("./productos.json");
+  const [data, setData] = useState(productos);
+  //le paso la data al provider
+  const [carrito, setCarrito] = useState([]);
+  const [total, setTotal] = useState(0);
+  const sharedState = { data, setData, carrito, setCarrito, total, setTotal };
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/landing" element={<Landing />} />
-        <Route path="/perfil" element={<Perfil />} />
-        <Route path="/vender" element={<Vender />} />
-        <Route path="/carrito" element={<Carrito />} />
-        <Route path="/registrarse" element={<Registrarse />} />
-        <Route path="/producto:nombre" element={<Producto />} /> */
-      </Routes>
-    </BrowserRouter>
+    <Context.Provider value={sharedState}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/landing" element={<Landing />} />
+          <Route path="/perfil" element={<Perfil />} />
+          <Route path="/vender" element={<Vender />} />
+          <Route path="/carrito" element={<Carrito />} />
+          <Route path="/registrarse" element={<Registrarse />} />
+          <Route path="/producto:nombre" element={<Producto />} />
+        </Routes>
+      </BrowserRouter>
+    </Context.Provider>
   );
 }
 

@@ -5,6 +5,10 @@
     margin-left: 1150px;
     width: 500px;
     height: 700px;
+    -webkit-box-shadow: -8px 10px 13px 5px rgba(150,150,150,1);
+-moz-box-shadow: -8px 10px 13px 5px rgba(150,150,150,1);
+box-shadow: -8px 10px 13px 5px rgba(150,150,150,1);
+border-radius: 40px 40px 40px 40px;
 }
 
 .card-body{
@@ -15,8 +19,14 @@
     justify-content:left;
     align-items: center;
 }
+.titulo{
+    display: flex;
 
-.caed-body button{
+}
+
+
+
+.card-body button{
     display: flex;
     align-items: center;
 

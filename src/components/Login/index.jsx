@@ -4,11 +4,7 @@ import "./index.css";
 
 
 
-
-
-
-
-const LoginForm = () => {
+const Login = () => {
   const [usuario, setUsuario] = useState({
     email: "",
     password: "",
@@ -57,7 +53,9 @@ const LoginForm = () => {
     <div className="login-container col-6">
       <div className="card">
         <div className="card-body">
+          <div className="titulo">
           <h1 className="card-tittle">Bienvenido!</h1>
+          </div>
           <h2>Iniciar Sesión</h2>
           <form>
             <div className="email pb-5">
@@ -98,4 +96,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default Login;

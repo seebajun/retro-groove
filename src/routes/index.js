@@ -5,7 +5,7 @@ import Perfil from "../views/Perfil/Perfil.jsx";
 import Producto from "../views/Producto/Producto.jsx";
 import Registrarse from "../views/Registrarse/Registrarse.jsx";
 import Vender from "../views/Vender/Vender.js";
-import Carrito from "../views/Carrito/carrito.jsx";
+import Carrito from "../views/Carrito/Carrito.jsx";
 
 export default () => {
   return (

@@ -1,10 +1,7 @@
 body{
-    background-image: url("./img/Primera\ vista.jpg");
-    background-size: cover;
+    
+    background: #ebd7a5 url(./img/Primera\ vista.jpg) center center/cover no-repeat;
 }
-
-
-
 
 
 
