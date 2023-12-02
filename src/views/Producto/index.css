@@ -1,0 +1,53 @@
+@media (max-width: 768px) {
+.contenedor{
+  background-color: black;
+}
+
+}
+.contenedor {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ebd7a5;
+}
+
+.contenedorCard {
+  background-color: #f6f1e4;
+  border: 1px palegoldenrod black;
+  border-radius: 8px;
+  display: flex;
+  max-width: 70%;
+  box-shadow: 10px 10px 11px 3px rgba(128, 128, 128, 0.52);
+}
+
+.imgCard {
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.containerCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  border: 1px solid black;
+}
+
+.cardContent {
+  margin: 1rem;
+  position: relative;
+}
+
+.precio {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.precio h5 {
+  margin: 0;
+}
