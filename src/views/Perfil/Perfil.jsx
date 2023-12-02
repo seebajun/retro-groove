@@ -1,9 +1,14 @@
-import React from 'react'
+import NavB from "../../components/Navbar/index";
 
-const Perfil = () => {
-  return (
-    <div>Perfil</div>
-  )
-}
 
-export default Perfil
+const Perfil = () =>{
+    return(
+        
+        <>
+        <NavB />
+        <h1 className="text-center m-4">Mi perfil</h1>
+        </>
+    );
+};
+
+export default Perfil;

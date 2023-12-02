@@ -1,7 +1,14 @@
-
 *{
   margin: 0;
   padding: 0;
   border: 0;
   box-sizing: border-box;
+}
+
+.hero {
+  background-image: url(https://images.unsplash.com/photo-1542728143-d9b537db6433?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  height: 50vh;
+  background-position: center;
+  background-size: cover;
+  padding: 100px;
 }
