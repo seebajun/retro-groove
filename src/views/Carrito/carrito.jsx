@@ -69,9 +69,9 @@ export default () => {
   };
 
   return (
-    <>
+    <div className="carrito"> 
     <NavB />
-      <p className="detalles fs-4 fw-semibold">Detalles del pedido:</p>
+      <h1 className="detalles ">Detalles del pedido:</h1>
       <div className="card carro">
       <ul className="carrito-container">
         {carrito.map((producto) => (
@@ -100,6 +100,6 @@ export default () => {
         <h1>Total:{total}</h1>
         <Button>Ir a pagar</Button>
       </div>
-    </>
+    </div>
   );
 };

@@ -1,10 +1,13 @@
 import React from "react";
 import "./index.css";
-
+import {Link} from "react-router-dom"
 import { Button } from "react-bootstrap"
 import NavB from "../../components/Navbar/index.jsx";
+import { useNavigate } from "react-router-dom";
 
 const Producto = () => {
+  const navigate = useNavigate();
+  navigate('/carrito')
   return (
     <>
     <NavB />
@@ -20,7 +23,7 @@ const Producto = () => {
           <h5>$9.990.-</h5>
           <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore cumque repudiandae, facere fugit reiciendis aspernatur dignissimos aliquam dicta totam sapiente id neque, impedit ipsam quod numquam sit natus eaque! Deserunt!</h5>
           <div className="precio">
-            <Button variant="primary"> agregar al 🛒 </Button>
+          <button type="button" class="btn btn-outline-secondary"><Link to="/carrito">agregar al 🛒</Link></button>
             <Button variant="primary"> ❤ </Button>
           </div>
         </div>

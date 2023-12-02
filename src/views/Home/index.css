@@ -1,7 +1,17 @@
-body{
+.home{
+    height: 100vh;
+    background-color: #ebd7a5;
+   background-image: url(./img/Primera\ vista.jpg);
+   background-size: cover;
+   background-repeat: no-repeat;
     
-    background: #ebd7a5 url(./img/Primera\ vista.jpg) center center/cover no-repeat;
 }
+
+
+
+
+
+
 
 
 

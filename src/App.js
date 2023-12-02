@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Context from "./context/index";
+import "./index.css";
 
 //componentes
 import Navbar from "./components/Navbar/index.jsx";

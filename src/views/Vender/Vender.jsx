@@ -26,6 +26,7 @@ const Vender = () => {
           <br />
           <Form.Control type="number" placeholder="Precio" />
           <br />
+          
           <Button variant="primary"> Subir </Button>
 
         </div>

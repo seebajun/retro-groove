@@ -1,5 +1,5 @@
 import React from 'react'
-import Login from '../../components/Login/index'
+import Login from '../../components/Login/login'
 import "./index.css"
 
 
@@ -7,7 +7,7 @@ import "./index.css"
 const Home = () => {
   return (
     <div className='home'>
-      <Login />
+       <Login />
       </div>
     
   )
