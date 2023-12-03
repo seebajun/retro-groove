@@ -1,37 +1,37 @@
-import React from "react";
+import { React, useContext } from "react";
 import "./index.css";
-import {Link} from "react-router-dom"
-import { Button } from "react-bootstrap"
+import { Button } from "react-bootstrap";
 import NavB from "../../components/Navbar/index.jsx";
-import { useNavigate } from "react-router-dom";
+
+import Context from "../../context/index.js";
 
 const Producto = () => {
-  const navigate = useNavigate();
-  navigate('/carrito')
+  const { data, carrito, setCarrito, setTotal } = useContext(Context);
+  const primerProducto = data[0];
+
+
+
   return (
     <>
-    <NavB />
-    <div className="contenedor">
-      <div className="contenedorCard">
-        <div className="imgCard">
-          <img
-            src="https://dojiw2m9tvv09.cloudfront.net/41657/product/X_1850117-28048004736.jpg?48&time=1701115645"
-          />
-        </div>
-        <div className="cardContent">
-          <h2>Title</h2>
-          <h5>$9.990.-</h5>
-          <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore cumque repudiandae, facere fugit reiciendis aspernatur dignissimos aliquam dicta totam sapiente id neque, impedit ipsam quod numquam sit natus eaque! Deserunt!</h5>
-          <div className="precio">
-          <button type="button" class="btn btn-outline-secondary"><Link to="/carrito">agregar al 🛒</Link></button>
-            <Button variant="primary"> ❤ </Button>
+      <NavB />
+      <div className="contenedor">
+        <div key={primerProducto.id} className="contenedorCard">
+          <div className="imgCard">
+            <img src={primerProducto.url} alt={primerProducto.nombre} />
+          </div>
+          <div className="cardContent">
+            <h2>{primerProducto.nombre}</h2>
+            <h5>{`$${primerProducto.precio}.-`}</h5>
+            <h5>{primerProducto.descripcion}</h5>
+            <div className="precio">
+              <Button variant="primary">Agregar al 🛒</Button>
+              <Button variant="primary">❤</Button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </>
   );
 };
-
 
 export default Producto;
