@@ -15,7 +15,7 @@ import Producto from "./views/Producto/Producto.jsx";
 import Registrarse from "./views/Registrarse/Registrarse.jsx";
 
 import Vender from "./views/Vender/Vender.jsx";
-import Carrito from "./views/Carrito/Carrito.jsx";
+import Carrito from "./views/Carrito/carrito.jsx";
 
 function App() {
   //cargue el archivo de productos

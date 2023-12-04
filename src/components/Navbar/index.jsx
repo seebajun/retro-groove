@@ -6,7 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 
 const NavB = () => {
     return (
-        <Navbar expand="lg" bg="success" variant='dark'>
+        <Navbar expand="lg" bg="dark" variant='dark'>
             <Container>
                 <Navbar.Brand href='/'>Retro Groove</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
