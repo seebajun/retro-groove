@@ -14,10 +14,17 @@
     flex-direction: column; 
     justify-content: center;
     max-width: 100%;
-    border: 1px black solid;
-    border-radius: 20px;
     margin-left: auto;
     margin-right: auto;
-    box-shadow: 10px 10px 11px 3px rgba(128, 128, 128, 0.52);
+    -webkit-box-shadow: -8px 10px 13px 5px rgba(150,150,150,1);
+    -moz-box-shadow: -8px 10px 13px 5px rgba(150,150,150,1);
+    box-shadow: -8px 10px 13px 5px rgba(150,150,150,1);
+    border-radius: 40px;
 
+}
+
+.venderContenedor h5{
+    font-family: 'Permanent Marker', cursive;
+    font-size: 70px;
+    color: #077984;
 }

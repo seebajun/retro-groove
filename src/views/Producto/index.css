@@ -39,6 +39,12 @@
   position: relative;
 }
 
+.cardContent h2{
+  font-family: 'Permanent Marker', cursive;
+  font-size: 70px;
+  color: #077984;
+}
+
 .precio {
   display: flex;
   justify-content: space-around;
@@ -48,9 +54,6 @@
   width: 100%;
 }
 
-.precio h5 {
-  margin: 0;
-}
 
 link{
   color:white;
