@@ -1,38 +1,29 @@
-import { useEffect, useState } from "react";
-// import './landing.css'
+import { useEffect, useState, useContext } from "react";
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import Context from "../../context/index";
 
 function Posts() {
 
+    const {data} = useContext(Context);
+    const jsonMap = data;
     const [posts, setPosts] = useState([])
     const [buscador, setBuscador] = useState("")
-    const [filtroPost, setFiltroPost] = useState([])
+    // const [filtroPost, setFiltroPost] = useState([])
 
-    const consultar = async() => {
-        let url ='https://digimon-api.vercel.app/api/digimon/level/intraining'
-        let consulta = await fetch(url)
-        let resultado = await consulta.json()
-        setPosts(resultado)
-    }
+    // useEffect(() => {
+    //     const minusculaBuscador = buscador.toLowerCase();
+    //     setFiltroPost(
+    //         posts.filter((publi) =>
+    //             publi.name.toLowerCase().includes(minusculaBuscador)
+    //         )
+    //     );
+    // }, [buscador, posts]);
 
-    useEffect(() => {
-        consultar()
-    }, [])
-
-    useEffect(() => {
-        const minusculaBuscador = buscador.toLowerCase();
-        setFiltroPost(
-            posts.filter((publi) =>
-                publi.name.toLowerCase().includes(minusculaBuscador)
-            )
-        );
-    }, [buscador, posts]);
-
-    const filtrar = filtroPost
+    const filtrar = jsonMap;
 
     return (
         <div className="miContainer text-center">
@@ -47,12 +38,12 @@ function Posts() {
             <Container id="contenedor">
                 <Row>
                     {filtrar.map((publi) => (
-                        <Col>
+                        <Col xs={12} md={3}>
                             <Card style={{ width:'18rem'}} className="card">
-                                <Card.Img variant="top" src="https://www.metalkingdom.net/album-photo/2018/03/1229-Necrophagist-Epitaph.jpg"/>
+                                <Card.Img variant="top" src={publi.url} height={200}/>
                                 <Card.Body>
-                                    <Card.Title>Necrophagist - Epitaph</Card.Title>
-                                    <Card.Text className="fw-bold fs-5">$420</Card.Text>
+                                    <Card.Title>{publi.nombre}</Card.Title>
+                                    <Card.Text className="fw-bold fs-5">{publi.precio}</Card.Text>
                                     <Button variant="primary" href="/producto">Ver más</Button>
                                 </Card.Body>
                             </Card>
