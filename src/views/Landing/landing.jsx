@@ -1,4 +1,4 @@
-import NavB from "../../components/Navbar/index";
+import NavB from "../../components/Navbar/navbar";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -13,6 +13,7 @@ const Landing = () =>{
         <NavB />
         <Hero />
         <Posts />
+        <div className="bg-dark text-light text-center p-4"><h5>Todos los derechos reservados.</h5></div>
     </>
         
     );

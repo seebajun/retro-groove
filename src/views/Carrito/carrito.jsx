@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { Image } from "react-bootstrap";
 import { Text } from "react-bootstrap";
 import "./Carrito.css";
-import NavB from "../../components/Navbar";
+import NavB from "../../components/Navbar/navbar";
 
 export default () => {
   const { data, setData } = useContext(Context);

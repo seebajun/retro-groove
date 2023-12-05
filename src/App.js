@@ -5,7 +5,7 @@ import Context from "./context/index";
 import "./index.css";
 
 //componentes
-import Navbar from "./components/Navbar/index.jsx";
+import Navbar from "./components/Navbar/navbar";
 
 //views
 import Home from "./views/Home/Home.jsx";

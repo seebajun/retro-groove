@@ -1,7 +1,7 @@
 import { React, useContext } from "react";
 import "./index.css";
 import { Button } from "react-bootstrap";
-import NavB from "../../components/Navbar/index.jsx";
+import NavB from "../../components/Navbar/navbar.jsx";
 
 import Context from "../../context/index.js";
 

@@ -2,7 +2,7 @@ import React from "react";
 
 import { Form, Button } from "react-bootstrap";
 
-import NavB from "../../components/Navbar";
+import NavB from "../../components/Navbar/navbar";
 import "./index.css";
 
 const Vender = () => {

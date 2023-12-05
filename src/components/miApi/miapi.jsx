@@ -10,7 +10,6 @@ function Posts() {
 
     const {data} = useContext(Context);
     const jsonMap = data;
-    const [posts, setPosts] = useState([])
     const [buscador, setBuscador] = useState("")
     // const [filtroPost, setFiltroPost] = useState([])
 
@@ -38,13 +37,13 @@ function Posts() {
             <Container id="contenedor">
                 <Row>
                     {filtrar.map((publi) => (
-                        <Col xs={12} md={3}>
-                            <Card style={{ width:'18rem'}} className="card">
+                        <Col xs={12} md={6} lg={3}>
+                            <Card style={{ width:'17rem'}} className="card">
                                 <Card.Img variant="top" src={publi.url} height={200}/>
                                 <Card.Body>
                                     <Card.Title>{publi.nombre}</Card.Title>
-                                    <Card.Text className="fw-bold fs-5">{publi.precio}</Card.Text>
-                                    <Button variant="primary" href="/producto">Ver más</Button>
+                                    <Card.Text className="fw-bold fs-5">${publi.precio}</Card.Text>
+                                    <Button variant="danger" href="/producto">Ver más</Button>
                                 </Card.Body>
                             </Card>
                         </Col>
