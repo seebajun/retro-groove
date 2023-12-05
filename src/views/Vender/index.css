@@ -1,30 +1,68 @@
-.contenedorMain{
-    background-color: #ebd7a5;
+@media (max-width: 768px) {
+  .contenedorMain {
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
+    flex-direction: column;
+    background-color: #ebd7a5;
+    min-height: 100vh;
+    /* width: 100%; */
+  }
 
-.venderContenedor{
+  .venderContenedor {
     background-color: #f6f1e4;
-    height: absolute;
-    padding: 1rem;
+    border: 1px palegoldenrod;
+    border-radius: 8px;
     display: flex;
-    flex-direction: column; 
-    justify-content: center;
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    -webkit-box-shadow: -8px 10px 13px 5px rgba(150,150,150,1);
-    -moz-box-shadow: -8px 10px 13px 5px rgba(150,150,150,1);
-    box-shadow: -8px 10px 13px 5px rgba(150,150,150,1);
-    border-radius: 40px;
-
-}
-
-.venderContenedor h5{
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    margin: 1rem;
+    width: 100%;
+    height: 80%;
+    max-width: 600px;
+    box-shadow: 10px 10px 11px 3px rgba(128, 128, 128, 0.52);
+  }
+  .venderContenedor h1{
     font-family: 'Permanent Marker', cursive;
-    font-size: 70px;
     color: #077984;
+    font-size: 48px;
+  }
+  .venderContenedor Button{
+    width: 100%;
+  }
 }
+
+.contenedorMain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ebd7a5;
+    min-height: 100vh;
+    width: 100%;
+  }
+
+  .venderContenedor {
+    background-color: #f6f1e4;
+    border: 1px palegoldenrod;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    margin: 0.5rem;
+    width: 100%;
+    height: 80%;
+    max-width: 600px;
+    box-shadow: 10px 10px 11px 3px rgba(128, 128, 128, 0.52);
+  }
+
+  .venderContenedor h1{
+    font-family: 'Permanent Marker', cursive;
+    color: #077984;
+    font-size: 48px;
+  }
+  .venderContenedor Button{
+    width: 100%;
+  }

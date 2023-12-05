@@ -1,32 +1,60 @@
-@media (max-width: 768px) {
-.contenedor{
-  background-color: black;
-}
-
-}
-.contenedor {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #ebd7a5;
-}
-
 .contenedorCard {
   background-color: #f6f1e4;
   border: 1px palegoldenrod black;
   border-radius: 8px;
   display: flex;
-  max-width: 70%;
+  max-width: auto;
   box-shadow: 10px 10px 11px 3px rgba(128, 128, 128, 0.52);
+  position: relative;
 }
 
-.imgCard {
-  padding: 1rem;
-  border-radius: 8px;
+.cardContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 1rem;
 }
 
-.containerCard {
+.cardContent img{
+  max-width: 90%;
+}
+
+.cardText{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative
+
+}
+
+.cardText h1{
+  font-family: 'Permanent Marker', cursive;
+  font-size: 48px;
+  color: #077984;
+  padding: 0.5rem;
+}
+
+.cardText h5{
+  padding: 0.5rem;
+}
+
+.botones {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 0.5rem;
+}
+
+.botones Button {
+  width: 48%;
+}
+
+
+
+/* .containerCard {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,22 +67,44 @@
   position: relative;
 }
 
-.cardContent h2{
-  font-family: 'Permanent Marker', cursive;
-  font-size: 70px;
-  color: #077984;
-}
+ */
 
-.precio {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
+@media (max-width: 768px) {
+  .contenedorCard {
+    background-color: #f6f1e4;
+    border: 1px palegoldenrod;
+    border-radius: 8px;
+    display: flex;
+    max-width: 90%;
+    box-shadow: 10px 10px 11px 3px rgba(128, 128, 128, 0.52);
 
+  }
+  .cardContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+  }
+  .cardContent img{
+    max-width: auto;
+  }
 
-link{
-  color:white;
+  .cardContent h1{
+    font-family: 'Permanent Marker', cursive;
+    font-size: 36px;
+    color: #077984;
+    position: relative;
+  }
+
+  .cardContent img{
+    max-width: 90%;
+  }
+
+  .botones {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    position: relative;
+  }
 }
