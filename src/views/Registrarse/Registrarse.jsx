@@ -24,9 +24,11 @@ const Registro = () => {
   const handleRegistro = () => {
     
         // URL del endpoint del servidor
-        const urlRegistro = 'https://tu-servidor.com/api/registro';
       
-        fetch(urlRegistro, {
+        const urlRegistro = "http://localhost:3001";
+        const endpoint = "/registrarse";
+      
+        fetch(urlRegistro + endpoint, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -34,20 +36,27 @@ const Registro = () => {
           body: JSON.stringify(usuario),
         })
           .then((response) => {
-            if (!response.ok) {
+            console.log(response);
+            if (!response.ok || response.status !== 201){
               throw new Error('Error en la solicitud de registro');
             }
-            return response.json();
+            console.log(response.json());
+            
+               // Manejar la respuesta exitosa del servidor
+          alert("Usuario registrado correctamente :)");
+              // Puedes realizar acciones adicionales, como redirigir al usuario a la página de inicio de sesión
+            navigate('/')
           })
-          .then((data) => {
-            // Manejar la respuesta exitosa del servidor
-            console.log('Usuario registrado con éxito:', data);
-            // Puedes realizar acciones adicionales, como redirigir al usuario a la página de inicio de sesión
-            navigate('/registrarse')
-          })
+          
+            
+            
+            
+            
+          
           .catch((error) => {
             // Manejar errores en la solicitud
-            console.error('Error en la solicitud de registro:', error);
+            alert('Error en la solicitud de registro');
+            console.log(error);
             // Puedes mostrar un mensaje de error al usuario
           });
       };
