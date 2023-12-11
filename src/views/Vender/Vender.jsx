@@ -2,7 +2,7 @@ import React from "react";
 
 import { Form, Button } from "react-bootstrap";
 
-import NavB from "../../components/Navbar";
+import NavB from "../../components/Navbar/navbar";
 import "./index.css";
 
 const Vender = () => {
@@ -11,10 +11,11 @@ const Vender = () => {
     <NavB />
       <div className="contenedorMain">
         <div className="venderContenedor">
-          <h5>Vender</h5>
+          <h1>Vender</h1>
           <Form.Control type="text" placeholder="Titulo" />
           <br />
-          <Form.Control as="textarea" placeholder="Descripción" rows={3} />          <br />
+          <Form.Control as="textarea" placeholder="Descripción" rows={3} />          
+          <br />
           <Form.Select aria-label="Default select example">
             <option>Formato</option>
             <option value="1">Vinilo</option>
@@ -26,9 +27,7 @@ const Vender = () => {
           <br />
           <Form.Control type="number" placeholder="Precio" />
           <br />
-          
           <Button variant="primary"> Subir </Button>
-
         </div>
       </div>
     </>

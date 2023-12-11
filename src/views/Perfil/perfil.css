@@ -1,17 +1,19 @@
 .miContenedor{
-    background-color: #ebd7a5;
+    background-color: #fff9eb;
+    padding-top: 50px;
     /* display: flex;
     align-items: center;
     justify-content: center; */
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 .cardPerfil{
     background-color: white;
-    border-radius: 40px;
-    padding: 20px;
-    margin: 30px;
-    -webkit-box-shadow: -8px 10px 13px 5px rgba(150,150,150,1);
-    -moz-box-shadow: -8px 10px 13px 5px rgba(150,150,150,1);
-    box-shadow: -8px 10px 13px 5px rgba(150,150,150,1);
+    /* width: 420px; */
+    border-radius: 20px;
+    padding: 30px;
+    margin: 0px 0px 40px 0px;
+    -webkit-box-shadow: 1px 1px 7px 1px rgba(150,150,150,1);
+    -moz-box-shadow: 1px 1px 7px 1px rgba(150,150,150,1);
+    box-shadow: 1px 1px 7px 1px rgba(150,150,150,1);
 }

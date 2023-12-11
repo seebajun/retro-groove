@@ -5,7 +5,7 @@ import Context from "./context/index";
 import "./index.css";
 
 //componentes
-import Navbar from "./components/Navbar/index.jsx";
+import Navbar from "./components/Navbar/navbar";
 
 //views
 import Home from "./views/Home/Home.jsx";
@@ -15,25 +15,16 @@ import Producto from "./views/Producto/Producto.jsx";
 import Registrarse from "./views/Registrarse/Registrarse.jsx";
 
 import Vender from "./views/Vender/Vender.jsx";
-import Carrito from "./views/Carrito/Carrito.jsx";
 
 function App() {
-  //cargue el archivo de productos
-  const productos = require("./productos.json");
-  const [data, setData] = useState(productos);
-  //le paso la data al provider
-  const [carrito, setCarrito] = useState([]);
-  const [total, setTotal] = useState(0);
-  const sharedState = { data, setData, carrito, setCarrito, total, setTotal };
   return (
-    <Context.Provider value={sharedState}>
+    <Context.Provider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/landing" element={<Landing />} />
           <Route path="/perfil" element={<Perfil />} />
           <Route path="/vender" element={<Vender />} />
-          <Route path="/carrito" element={<Carrito />} />
           <Route path="/registrarse" element={<Registrarse />} />
           <Route path="/producto" element={<Producto />} />
         </Routes>

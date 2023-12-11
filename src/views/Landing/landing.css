@@ -1,5 +1,6 @@
 .miContainer{
-    background-color: #ebd7a5;
+    background-color: #fff9eb;
+    padding-bottom: 50px;
     /* padding-left:70px; */
     /* height: 100vh; */
 }
@@ -15,11 +16,11 @@
 
 .card{
     /* background-color: white; */
-    border-radius: 40px;
+    border-radius: 30px;
     padding: 20px;
     margin: 30px 0px 0px 0px;
-    -webkit-box-shadow: -8px 10px 10px 5px rgba(150,150,150,1);
-    -moz-box-shadow: -8px 10px 10px 5px rgba(150,150,150,1);
-    box-shadow: -8px 10px 10px 5px rgba(150,150,150,1);
+    -webkit-box-shadow: 1px 1px 7px 1px rgba(150,150,150,1);
+    -moz-box-shadow: 1px 1px 7px 1px rgba(150,150,150,1);
+    box-shadow: 1px 1px 7px 1px rgba(150,150,150,1);
 }
 
