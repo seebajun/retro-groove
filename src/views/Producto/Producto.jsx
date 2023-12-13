@@ -1,14 +1,9 @@
-import { React, useContext } from "react";
+import { React } from "react";
 import "./index.css";
 import { Button } from "react-bootstrap";
 import NavB from "../../components/Navbar/navbar.jsx";
 
-import Context from "../../context/index.js";
-
 const Producto = () => {
-  const { data, carrito, setCarrito, setTotal } = useContext(Context);
-  const primerProducto = data[0];
-
   return (
     <>
       <NavB />

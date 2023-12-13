@@ -1,8 +1,8 @@
 .miContainer{
     background-color: #fff9eb;
     padding-bottom: 50px;
-    /* padding-left:70px; */
-    /* height: 100vh; */
+
+
 }
 
 #contenedor{
@@ -15,7 +15,7 @@
 }
 
 .card{
-    /* background-color: white; */
+   
     border-radius: 30px;
     padding: 20px;
     margin: 30px 0px 0px 0px;
