@@ -11,16 +11,6 @@ function Posts() {
     const {data} = useContext(Context);
     const jsonMap = data;
     const [buscador, setBuscador] = useState("")
-    // const [filtroPost, setFiltroPost] = useState([])
-
-    // useEffect(() => {
-    //     const minusculaBuscador = buscador.toLowerCase();
-    //     setFiltroPost(
-    //         posts.filter((publi) =>
-    //             publi.name.toLowerCase().includes(minusculaBuscador)
-    //         )
-    //     );
-    // }, [buscador, posts]);
 
     const filtrar = jsonMap;
 
