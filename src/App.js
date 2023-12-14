@@ -14,11 +14,9 @@ import Registrarse from "./views/Registrarse/Registrarse.jsx";
 
 import Vender from "./views/Vender/Vender.jsx";
 
-function App() {
-  //cargue el archivo de productos
+function App() { 
   const productos = require("./productos.json");
   const [data, setData] = useState(productos);
-  //le paso la data al provider
 
   const [total, setTotal] = useState(0);
   const sharedState = { data, setData, total, setTotal };
