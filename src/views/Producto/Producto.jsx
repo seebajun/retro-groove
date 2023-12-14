@@ -1,12 +1,16 @@
-import { React } from "react";
+import { React, Context } from "react";
 import "./index.css";
 import { Button } from "react-bootstrap";
 import NavB from "../../components/Navbar/navbar.jsx";
 
+
+
 const Producto = () => {
+
+
   return (
     <>
-      <NavB />
+      {/* <NavB />
       <div className="contenedor">
         <div key={primerProducto.id} className="contenedorCard">
           <div className="cardContent">
@@ -22,7 +26,7 @@ const Producto = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

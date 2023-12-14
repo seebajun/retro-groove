@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './registrarse.css';
 import { useNavigate, Link } from 'react-router-dom';
+import axios from 'axios';
 
 const Registro = () => {
   const [usuario, setUsuario] = useState({
@@ -10,7 +11,6 @@ const Registro = () => {
     password: '',
   });
 
-  
   const navigate = useNavigate();
 
   const handleInputChange = (e) => {
@@ -21,48 +21,34 @@ const Registro = () => {
     });
   };
 
-  const handleRegistro = () => {
-    
-        // URL del endpoint del servidor
-      
-        const urlRegistro = "http://localhost:3001";
-        const endpoint = "/registrarse";
-      
-        fetch(urlRegistro + endpoint, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(usuario),
-        })
-          .then((response) => {
-            console.log(response);
-            if (!response.ok || response.status !== 201){
-              throw new Error('Error en la solicitud de registro');
-            }
-            console.log(response.json());
-            
-               // Manejar la respuesta exitosa del servidor
-          alert("Usuario registrado correctamente :)");
-              // Puedes realizar acciones adicionales, como redirigir al usuario a la página de inicio de sesión
-            navigate('/')
-          })
-          
-            
-            
-            
-            
-          
-          .catch((error) => {
-            // Manejar errores en la solicitud
-            alert('Error en la solicitud de registro');
-            console.log(error);
-            // Puedes mostrar un mensaje de error al usuario
-          });
-      };
-    
+  const handleRegistro = async () => {
+    const urlRegistro = 'http://localhost:2999';
+    const endpoint = '/registrarse';
 
+    try {
+      console.log('axios registro');
+      const response = await axios.post(urlRegistro + endpoint, usuario, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
 
+      if (!response.data || response.status !== 201) {
+        throw new Error('Error en la solicitud de registro');
+      }
+
+      // Manejar la respuesta exitosa del servidor
+      alert('Usuario registrado correctamente :)');
+      // Puedes realizar acciones adicionales, como redirigir al usuario a la página de inicio de sesión
+      navigate('/landing');
+    } catch (error) {
+      // Manejar errores en la solicitud
+      alert('Error en la solicitud de registro');
+      console.error('Error en la solicitud:', error);
+      // Puedes mostrar un mensaje de error al usuario
+    }
+  };
+    
   return (
    <div className='contenedor'>
       <div className="card-registrarse">
