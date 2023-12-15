@@ -29,7 +29,7 @@ function App() {
           <Route path="/perfil" element={<Perfil />} />
           <Route path="/vender" element={<Vender />} />
           <Route path="/registrarse" element={<Registrarse />} />
-          <Route path="/producto" element={<Producto />} />
+          <Route path="/producto/:titulo" element={<Producto />} />
         </Routes>
       </BrowserRouter>
     </Context.Provider>

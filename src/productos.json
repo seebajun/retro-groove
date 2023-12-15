@@ -1,72 +1,92 @@
 [
     {
       "id": 1,
-      "nombre": "Producto1",
+      "id_usuario": 1,
+      "titulo": "Producto1",
       "descripcion": "Descripción del Producto 1.",
-      "url": "https://dojiw2m9tvv09.cloudfront.net/41657/product/X_1850117-28048004736.jpg?48&time=1701129528",
+      "formato": "Vinilo",
+      "imagen": "https://dojiw2m9tvv09.cloudfront.net/41657/product/X_1850117-28048004736.jpg?48&time=1701129528",
       "precio": 19.99
     },
     {
       "id": 2,
-      "nombre": "Producto2",
+      "id_usuario": 2,
+      "titulo": "Producto2",
       "descripcion": "Descripción del Producto 2.",
-      "url": "https://dojiw2m9tvv09.cloudfront.net/41657/product/X_34054240982.jpg?48&time=1701129561",
+      "formato": "Vinilo",
+      "imagen": "https://dojiw2m9tvv09.cloudfront.net/41657/product/X_34054240982.jpg?48&time=1701129561",
       "precio": 29.99
     },
     {
       "id": 3,
-      "nombre": "Producto3",
+      "id_usuario": 3,
+      "titulo": "Producto3",
       "descripcion": "Descripción del Producto 3.",
-      "url": "https://www.metalkingdom.net/album-photo/2018/03/1229-Necrophagist-Epitaph.jpg",
+      "formato": "CDs",
+      "imagen": "https://www.metalkingdom.net/album-photo/2018/03/1229-Necrophagist-Epitaph.jpg",
       "precio": 39.99
     },
     {
       "id": 4,
-      "nombre": "Producto4",
+      "id_usuario": 1,
+      "titulo": "Producto4",
       "descripcion": "Descripción del Producto 4.",
-      "url": "https://www.metalkingdom.net/album-photo/2020/12/26047-necrophagist-onset-of-putrefaction-2.jpg",
+      "formato": "CDs",
+      "imagen": "https://www.metalkingdom.net/album-photo/2020/12/26047-necrophagist-onset-of-putrefaction-2.jpg",
       "precio": 49.99
     },
     {
       "id": 5,
-      "nombre": "Producto5",
+      "id_usuario": 2,
+      "titulo": "Producto5",
       "descripcion": "Descripción del Producto 5.",
-      "url": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/2e/2eb70d2a-63ec-4d61-96cb-7dc8a92c1ab0?rule=$_20.JPG",
+      "formato": "Cassete",
+      "imagen": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/2e/2eb70d2a-63ec-4d61-96cb-7dc8a92c1ab0?rule=$_20.JPG",
       "precio": 99.99
     },
     {
       "id": 6,
-      "nombre": "Producto6",
+      "id_usuario": 4,
+      "titulo": "Producto6",
       "descripcion": "Descripción del Producto 6.",
-      "url": "https://popsike.io/pix/20210326/133705929425.jpg",
+      "formato": "CDs",
+      "imagen": "https://popsike.io/pix/20210326/133705929425.jpg",
       "precio": 19.99
     },
     {
       "id": 7,
-      "nombre": "Producto7",
+      "id_usuario": 2,
+      "titulo": "Producto7",
       "descripcion": "Descripción del Producto 7.",
-      "url": "https://i.ebayimg.com/thumbs/images/g/n4MAAOSw9khhL9JI/s-l640.jpg",
+      "formato": "CDs",
+      "imagen": "https://i.ebayimg.com/thumbs/images/g/n4MAAOSw9khhL9JI/s-l640.jpg",
       "precio": 29.99
     },
     {
       "id": 8,
-      "nombre": "Producto8",
+      "id_usuario": 3,
+      "titulo": "Producto8",
       "descripcion": "Descripción del Producto 8.",
-      "url": "https://tshirtslayer.com/files-tshirt/styles/shirtview/public/user-30412/tss--2ed09602d8d0ca40a841a581e27db928.jpg",
+      "formato": "Vinilo",
+      "imagen": "https://tshirtslayer.com/files-tshirt/styles/shirtview/public/user-30412/tss--2ed09602d8d0ca40a841a581e27db928.jpg",
       "precio": 39.99
     },
     {
       "id": 9,
-      "nombre": "Producto9",
+      "id_usuario": 2,
+      "titulo": "Producto9",
       "descripcion": "Descripción del Producto 9.",
-      "url": "https://i.redd.it/cra6ut43bow81.jpg",
+      "formato": "Vinilo",
+      "imagen": "https://i.redd.it/cra6ut43bow81.jpg",
       "precio": 49.99
     },
     {
       "id": 10,
-      "nombre": "Producto10",
+      "id_usuario": 3,
+      "titulo": "Producto10",
       "descripcion": "Descripción del Producto 10.",
-      "url": "https://musicjungle.cl/wp-content/uploads/2020/12/Metallica-Master-Of-Puppets-Cassette.jpg",
+      "formato": "Cassete",
+      "imagen": "https://musicjungle.cl/wp-content/uploads/2020/12/Metallica-Master-Of-Puppets-Cassette.jpg",
       "precio": 19.99
     }
   ]

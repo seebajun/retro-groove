@@ -7,8 +7,9 @@ import "./index.css";
 const Vender = () => {
   const [producto, setProducto] = useState({
     titulo: "",
+    descripcion: "",
     formato: "",
-    url: "",
+    imagen: "",
     precio: 0,
   });
 
@@ -65,7 +66,14 @@ const Vender = () => {
             value={producto.titulo}
             onChange={handleInputChange}
           />
-
+          <br />
+          <Form.Control
+            type="text"
+            placeholder="descripcion"
+            name="descripcion"
+            value={producto.descripcion}
+            onChange={handleInputChange}
+          />
           <br />
           <Form.Select
             aria-label="Default select example"
@@ -81,9 +89,9 @@ const Vender = () => {
           <br />
           <Form.Control
             type="text"
-            placeholder="URL"
-            name="url"
-            value={producto.url}
+            placeholder="Imagen"
+            name="imagen"
+            value={producto.imagen}
             onChange={handleInputChange}
           />
           <br />
