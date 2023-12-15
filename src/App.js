@@ -6,12 +6,13 @@ import Context from "./context/index";
 import "./index.css";
 
 //views
+
 import Home from "./views/Home/Home.jsx";
 import Landing from "./views/Landing/Landing.jsx";
 import Perfil from "./views/Perfil/Perfil.jsx";
 import Producto from "./views/Producto/Producto.jsx";
 import Registrarse from "./views/Registrarse/Registrarse.jsx";
-
+import Favoritos from "./views/Likes/Likes.jsx";
 import Vender from "./views/Vender/Vender.jsx";
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Route path="/landing" element={<Landing />} />
           <Route path="/perfil" element={<Perfil />} />
           <Route path="/vender" element={<Vender />} />
+          <Route path="/favoritos" element={<Favoritos />} />
           <Route path="/registrarse" element={<Registrarse />} />
           <Route path="/producto" element={<Producto />} />
         </Routes>
