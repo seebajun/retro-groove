@@ -4,43 +4,53 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import Context from "../../context/index";
+// import Context from "../../context/index";
 
 function Posts() {
-
-    const {data} = useContext(Context);
-    const jsonMap = data;
-    const [buscador, setBuscador] = useState("")
-
-    const filtrar = jsonMap;
+    // mostrar landing2 en cards
+    // const { productos } = useContext(Context);
+    const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
+    useEffect(() => {
+        setLoading(true);
+        setError(false);
+        const getProducts = async () => {
+            try {
+                const response = await fetch("localhost:3000/landing2/");
+                const data = await response.json();
+                setProducts(data);
+            } catch (error) {
+                setError(true);
+            }
+            setLoading(false);
+        };
+        getProducts();
+    }, []);
+    
 
     return (
-        <div className="miContainer text-center">
-            <h1>Explora todas las publicaciones</h1>
-            <input
-            type="text"
-            className="form-control mx-auto mt-4 w-75"
-            placeholder="Busca un artista, album o genero"
-            value={buscador}
-            onChange={(e) => setBuscador(e.target.value)}
-            />
-            <Container id="contenedor">
+        <div>
+            <Container>
                 <Row>
-                    {filtrar.map((publi) => (
-                        <Col xs={12} md={6} lg={3}>
-                            <Card style={{ width:'17rem'}} className="card">
-                                <Card.Img variant="top" src={publi.url} height={200}/>
+                    {loading && <p>Cargando...</p>}
+                    {error && <p>Hubo un error</p>}
+                    {products.map((product) => (
+                        <Col xs={12} sm={6} md={4} lg={3} key={product.id}>
+                            <Card>
+                                <Card.Img variant="top" src={product.image} />
                                 <Card.Body>
-                                    <Card.Title>{publi.nombre}</Card.Title>
-                                    <Card.Text className="fw-bold fs-5">${publi.precio}</Card.Text>
-                                    <Button variant="danger" href="/producto">Ver más</Button>
+                                    <Card.Title>{product.title}</Card.Title>
+                                    <Card.Text>{product.description}</Card.Text>
+                                    <Button variant="primary">Ver más</Button>
                                 </Card.Body>
                             </Card>
                         </Col>
                     ))}
                 </Row>
             </Container>
-        </div> 
+        </div>
+         
     );
 }
 

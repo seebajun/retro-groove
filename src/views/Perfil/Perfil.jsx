@@ -20,17 +20,13 @@ const Perfil = () =>{
                             <Form.Control type="text" placeholder="Mi nombre" readOnly disabled className="mb-3"/>
                             </Form.Group>
                         <Form.Group>
+                            <Form.Label>Apellido</Form.Label>
+                            <Form.Control type="text" placeholder="Mi apellido" readOnly disabled className="mb-3"/>
+                        </Form.Group>
+                        <Form.Group>
                             <Form.Label>Email</Form.Label>
                             <Form.Control type="text" placeholder="Mi email" readOnly disabled className="mb-3"/>
                         </Form.Group>
-                        <Form.Group>
-                            <Form.Label>Clave</Form.Label>
-                            <Form.Control type="password" placeholder="Mi clave" readOnly disabled className="mb-3"/>
-                        </Form.Group>
-                        <Form.Group>
-                            <Form.Label>Direccion</Form.Label>
-                            <Form.Control type="text" placeholder="Mi direccion" readOnly disabled className="mb-3"/>
-                        </Form.Group> 
                     </Form>
                 </Card>
             </Col>
@@ -82,6 +78,9 @@ const Perfil = () =>{
             </Col>
         </Row>
         </Container>
+        <div className="bg-dark text-light text-center p-4">
+            <h5>Todos los derechos reservados.</h5>
+        </div>
         </>
     );
 };
