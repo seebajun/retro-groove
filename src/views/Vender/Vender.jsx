@@ -7,7 +7,6 @@ import axios from "axios";
 import swal from 'sweetalert';
 import "./index.css";
 
-
 const Vender = () => {
   const navigate = useNavigate();
   const [producto, setProducto] = useState({
@@ -109,7 +108,7 @@ const Vender = () => {
             onChange={handleInputChange}
           />
           <br />
-          <Button variant="btn btn-dark btn-lg" onClick={handleVender}>
+          <Button variant="dark" size="lg" onClick={handleVender}>
             Subir
           </Button>
         </div>

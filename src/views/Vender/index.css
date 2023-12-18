@@ -4,13 +4,13 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     min-height: 100vh;
     /* width: 100%; */
   }
 
   .venderContenedor {
-    background-color: #f6f1e4;
+    background-color: #fff9eb;
     border: 1px palegoldenrod;
     border-radius: 8px;
     display: flex;
@@ -38,13 +38,13 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #ebd7a5;
+    background-color: #fff9eb;
     min-height: 100vh;
     width: 100%;
   }
 
   .venderContenedor {
-    background-color: #f6f1e4;
+    background-color: #fff;
     border: 1px palegoldenrod;
     border-radius: 8px;
     display: flex;

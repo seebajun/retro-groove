@@ -16,4 +16,5 @@
     -webkit-box-shadow: 1px 1px 7px 1px rgba(150,150,150,1);
     -moz-box-shadow: 1px 1px 7px 1px rgba(150,150,150,1);
     box-shadow: 1px 1px 7px 1px rgba(150,150,150,1);
+    text-transform: capitalize;
 }
