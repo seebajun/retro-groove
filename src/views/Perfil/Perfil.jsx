@@ -5,9 +5,12 @@ import { Container, Col, Row, Card, TabContainer, Nav } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 import axios from "axios";
 import { useState, useEffect } from "react";
+import Footer from "../../components/footer/Footer";
+import { useNavigate } from "react-router-dom";
 
 const Perfil = () =>{
-            //consumir api de usuario
+        const navigate = useNavigate();
+    //consumir api de usuario
         const [user, setUser] = useState({
             nombre: "",
             apellido: "",
@@ -39,23 +42,48 @@ const Perfil = () =>{
         return(
             <>
             <NavB />
-            <Container>
+            <div className="miContainer">
+            <Container className="vh-100">
                 <Row>
-                    <Col>
+                    <Col sm={4}>
                         <Card>
+                            <Card.Body className="">
+                                <Card.Title>Mi perfil</Card.Title>
+                                <Card.Text>
+                                    <Form>
+                                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                                            <Form.Label>Nombre</Form.Label>
+                                            <Form.Control type="text" placeholder={user.nombre} disabled/>
+                                        </Form.Group>
+                                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                                            <Form.Label>Apellido</Form.Label>
+                                            <Form.Control type="text" placeholder={user.apellido} disabled/>
+                                        </Form.Group>
+                                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                                            <Form.Label>Email</Form.Label>
+                                            <Form.Control type="email" placeholder={user.email} disabled/>
+                                        </Form.Group>
+                                        <Button variant="primary" type="submit">
+                                            Actualizar
+                                        </Button>
+                                    </Form>
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                    <Col sm={8}>
+                        <Card className="p-5">
                             <Card.Body>
-                                <Card.Title>Perfil</Card.Title>
-                                <Card.Text>{user.nombre}</Card.Text>
-                                <Card.Text>{user.apellido}</Card.Text>
-                                <Card.Text>{user.email}</Card.Text>
-                                <Button variant="primary">Editar</Button>
+                                <Card.Title>Vender en Retro Groove</Card.Title>
+                                <Card.Text>Vende tus discos, vinilos y cassetes -nuevos o usados- a miles de usuarios en todo el pais, de manera facil y 100% gratuita</Card.Text>
+                                <Button variant="primary" onClick={() => navigate(`/vender`)}>Publicar un articulo</Button>
                             </Card.Body>
                         </Card>
                     </Col>
                 </Row>
             </Container>
-            {/* footer con redes sociales */}
-            <div></div>
+            </div>
+            <Footer />
             </>
             
             
