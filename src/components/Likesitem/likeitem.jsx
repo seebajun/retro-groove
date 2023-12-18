@@ -2,7 +2,6 @@ import React from "react";
 import "./likeitem.css";
 import { useNavigate } from "react-router-dom";
 
-
 const LikeItem = ({ productos }) => {
   const navigate = useNavigate();
   return (
