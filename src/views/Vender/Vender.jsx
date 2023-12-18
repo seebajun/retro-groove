@@ -3,8 +3,10 @@ import { Form, Button } from "react-bootstrap";
 import NavB from "../../components/Navbar/navbar";
 import axios from "axios";
 import "./index.css";
+import { useNavigate } from "react-router-dom";
 
 const Vender = () => {
+  const navigate = useNavigate();
   const [producto, setProducto] = useState({
     titulo: "",
     descripcion: "",
@@ -24,7 +26,7 @@ const Vender = () => {
   const handleVender = async () => {
     const urlServer = "http://localhost:2999";
     const endpoint = "/vender";
-    const token = localStorage.getItem("token"); 
+    const token = localStorage.getItem("token");
     console.log("Token:", token);
 
     try {
@@ -50,12 +52,13 @@ const Vender = () => {
     const token = localStorage.getItem("token");
     if (!token) {
       alert("Debes iniciar sesión para vender productos.");
+      navigate("/");
     }
   }, []);
 
   return (
     <>
-    <NavB />
+      <NavB />
       <div className="contenedorMain">
         <div className="venderContenedor">
           <h1>Vender</h1>
