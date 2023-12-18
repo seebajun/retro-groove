@@ -52,7 +52,7 @@ const Perfil = () =>{
             <>
             <NavB />
             <div className="miContainer">
-            <Container className="vh-100">
+            <Container className="">
                 <Row>
                     <Col sm={6}>
                         <Card className="">
