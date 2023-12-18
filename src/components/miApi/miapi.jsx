@@ -14,7 +14,7 @@ function Posts() {
     const token = localStorage.getItem("token");
     console.log("Token:", token);
     const urlServer = "http://localhost:2999";
-    const endpoint = "/landing2";
+    const endpoint = "/landing";
     console.log("Token:", token);
     const handleGetPosts = async () => {
         try {

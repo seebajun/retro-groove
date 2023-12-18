@@ -19,7 +19,7 @@ const Producto = () => {
     const obtenerProducto = async () => {
       const urlServer = "http://localhost:2999";
       const endpoint = `/producto/${titulo}`;
-      const token = localStorage.getItem("token"); 
+      const token = localStorage.getItem("token");
 
       try {
         const response = await axios.get(urlServer + endpoint, {
@@ -33,9 +33,57 @@ const Producto = () => {
         console.error("Error al obtener el producto:", error);
       }
     };
-
     obtenerProducto();
   }, [titulo]);
+
+  const agregarAFavoritos = async () => {
+    const urlServer = "http://localhost:2999";
+    const endpointTitulo = `/producto/${titulo}`;
+    const token = localStorage.getItem("token");
+
+    try {
+      const responseIdProducto = await axios.get(urlServer + endpointTitulo, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      const endpointFavoritos = "/favoritos/";
+      const verificarFavorito = await axios.get(urlServer + endpointFavoritos, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      const productoEnFavoritos = verificarFavorito.data.find(
+        (favorito) => favorito.id_productos === responseIdProducto.data.id
+      );
+
+      if (productoEnFavoritos) {
+        alert("El producto ya está en favoritos");
+      } else {
+
+        const endpointFavoritos2 = `/favoritos/${responseIdProducto.data.id}`;
+
+        await axios.post(
+          urlServer + endpointFavoritos2,
+          { idProducto: responseIdProducto.data.id },
+          {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        console.log("Producto agregado a favoritos correctamente");
+        alert("Producto agregado a favoritos correctamente");
+      }
+    } catch (error) {
+      console.error("Error al agregar producto a favoritos:", error);
+    }
+  };
 
   return (
     <>
@@ -50,7 +98,9 @@ const Producto = () => {
               <h5>{producto.descripcion}</h5>
               <div className="botones">
                 <Button variant="primary">🛒</Button>
-                <Button variant="primary">❤</Button>
+                <Button variant="primary" onClick={agregarAFavoritos}>
+                  ❤
+                </Button>
               </div>
             </div>
           </div>
