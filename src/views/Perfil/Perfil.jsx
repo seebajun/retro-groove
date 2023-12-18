@@ -72,9 +72,6 @@ const Perfil = () =>{
                                             <Form.Label>Email</Form.Label>
                                             <Form.Control type="email" placeholder={user.email} disabled/>
                                         </Form.Group>
-                                        <Button variant="primary" type="submit">
-                                            Actualizar
-                                        </Button>
                                     </Form>
                                 </Card.Text>
                             </Card.Body>
@@ -85,7 +82,7 @@ const Perfil = () =>{
                             <Card.Body>
                                 <Card.Title>Vender en Retro Groove</Card.Title>
                                 <Card.Text>Vende tus discos, vinilos y cassetes -nuevos o usados- a miles de usuarios en todo el pais, de manera facil y 100% gratuita</Card.Text>
-                                <Button variant="primary" onClick={() => navigate(`/vender`)}>Publicar un articulo</Button>
+                                <Button className="btn btn-outline-dark" variant="" onClick={() => navigate(`/vender`)}>Publicar un articulo</Button>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -96,7 +93,7 @@ const Perfil = () =>{
                             <Card.Body>
                                 <Card.Title>Mis favoritos</Card.Title>
                                 <Card.Text>Guarda tus articulos favoritos para comprarlos cuando quieras</Card.Text>
-                                <Button variant="primary" onClick={() => navigate(`/favoritos`)}>Ver favoritos</Button>
+                                <Button variant="" className="btn btn-outline-dark" onClick={() => navigate(`/favoritos`)}>Ver favoritos</Button>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -105,7 +102,7 @@ const Perfil = () =>{
                             <Card.Body>
                                 <Card.Title>Mis publicaciones</Card.Title>
                                 <Card.Text>Administra tus articulos publicados</Card.Text>
-                                <Button variant="primary" onClick={() => navigate(`/publicaciones`)}>Ver publicaciones</Button>
+                                <Button variant="" className="btn btn-outline-dark" onClick={() => navigate(`/publicaciones`)}>Ver publicaciones</Button>
                             </Card.Body>
                         </Card>
                     </Col>

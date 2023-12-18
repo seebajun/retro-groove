@@ -43,13 +43,12 @@ function Posts() {
                 {posts.map((post) => (
                     <Col key={post._id} xs={12} sm={6} md={4} lg={3}>
                         <Card className="card">
-                            <Card.Img variant="top" src={post.imagen} />
+                            <Card.Img variant="top" src={post.imagen} height={250}/>
                             <Card.Body>
                                 <Card.Title>{post.titulo}</Card.Title>
                                 <Card.Text>{post.formato}</Card.Text>
                                 <Card.Text className="fw-bold">${post.precio}</Card.Text>
-                                <Button variant="primary" onClick={() => navigate(`/producto/${post.titulo}`)}>Ver más</Button>
-
+                                <Button variant="" className="btn btn-outline-dark" onClick={() => navigate(`/producto/${post.titulo}`)}>Ver más</Button>
                             </Card.Body>
                         </Card>
                     </Col>
