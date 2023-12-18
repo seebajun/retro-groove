@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import LikeItem from "../../components/Likesitem/likeitem"; // Ajusta la ruta según tu estructura
+import LikeItem from "../../components/Likesitem/likeitem";
+import Navbar from "../../components/Navbar/navbar";
 
 const Likes = () => {
   const [likes, setLikes] = useState([]);
@@ -30,6 +31,7 @@ const Likes = () => {
 
   return (
     <div className="likes-container">
+      <Navbar />
       <h1>Tus Likes</h1>
       {likes.map((producto) => (
         <LikeItem key={producto.id} producto={producto} />

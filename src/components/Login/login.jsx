@@ -1,3 +1,4 @@
+import axios from "axios";
 import "./login.css";
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -18,34 +19,35 @@ const Login = () => {
   };
 
   const handleLogin = async () => {
-    const urlServer = "http://localhost:3001";
+    const urlServer = "http://localhost:2999";
     const endpoint = "/login";
 
     try {
-      console.log("fetching/login");
-      const response = await fetch(urlServer + endpoint, {
-        method: "POST",
+      console.log("axios login");
+      const response = await axios.post(urlServer + endpoint, usuario, {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(usuario),
       });
 
-      if (!response.ok) {
-        const errorMessage = await response.json();
-        alert(errorMessage.message + " 🙁");
-        console.log(errorMessage);
-        return;
-      }
-
-      const { data: token } = await response.json();
+      const token = response.data;
       alert("Usuario identificado con éxito 😀");
       localStorage.setItem("token", token);
+      console.log(token);
 
-      // Redireccionar al usuario a la página principal u otra vista
-      navigate("/"); // Cambia '/' según sea necesario
+      navigate("/landing");
     } catch (error) {
       console.error("Error en la solicitud:", error);
+
+      if (error.response) {
+        const errorMessage = error.response.data.message;
+        alert(errorMessage + " 🙁");
+      } else if (error.request) {
+        console.error("No se recibió respuesta del servidor");
+      } else {
+        console.error("Error al configurar la solicitud:", error.message);
+      }
+
       alert(
         "Hubo un error al intentar iniciar sesión. Por favor, inténtalo de nuevo. 🙁"
       );
@@ -132,7 +134,7 @@ const Login = () => {
             </div>
           </form>
           <p className="link mt-3">
-            ¿Aún no tienes cuenta? <Link to="/registrarse">Regístrate</Link>{" "}
+            ¿Aún no tienes una cuenta? <Link to="/registrarse">Regístrate</Link>{" "}
             para empezar.
           </p>
         </div>
