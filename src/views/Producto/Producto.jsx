@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import NavB from "../../components/Navbar/navbar.jsx";
+import Footer from "../../components/footer/Footer.jsx";
 import axios from "axios";
 import "./index.css";
 
 const Producto = () => {
+  const navigate = useNavigate();
   const { titulo } = useParams();
   const [producto, setProducto] = useState({
     titulo: "",
@@ -69,7 +71,7 @@ const Producto = () => {
 
         await axios.post(
           urlServer + endpointFavoritos2,
-          { idProducto: responseIdProducto.data.id },
+          { idProducto : responseIdProducto.data.id  },
           {
             headers: {
               "Content-Type": "application/json",
@@ -84,6 +86,14 @@ const Producto = () => {
       console.error("Error al agregar producto a favoritos:", error);
     }
   };
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      alert("Debes iniciar sesión para vender productos.");
+      navigate('/');
+    }
+  }, []);
 
   return (
     <>
@@ -106,6 +116,7 @@ const Producto = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

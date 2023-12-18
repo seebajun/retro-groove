@@ -39,6 +39,15 @@ const Perfil = () =>{
         useEffect(() => {
             handleGetUser();
         }, []);
+
+        useEffect(() => {
+            const token = localStorage.getItem("token");
+            if (!token) {
+              alert("Debes iniciar sesión para vender productos.");
+              navigate('/');
+            }
+          }, []);
+
         return(
             <>
             <NavB />
