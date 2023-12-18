@@ -1,12 +1,11 @@
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-<<<<<<< HEAD
+
 import "./navbar.css";
-=======
+
 import { useContext } from "react";
 import Context from "../../context/index";
->>>>>>> d663f0416092f9ff63a38ab25dff6b49ef9d5def
 
 // mostrar el nombre del usuario en el navbar
 const NavB = () => {

@@ -1,7 +1,10 @@
-import axios from "axios";
-import "./login.css";
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+
+import axios from "axios";
+import swal from 'sweetalert';
+
+import "./login.css";
 
 const Login = () => {
   const [usuario, setUsuario] = useState({
@@ -31,7 +34,7 @@ const Login = () => {
       });
 
       const token = response.data;
-      alert("Usuario identificado con éxito 😀");
+      swal("Excelente!", "Usuario identificado con éxito 😀", "success");
       localStorage.setItem("token", token);
       console.log(token);
 
@@ -41,14 +44,14 @@ const Login = () => {
 
       if (error.response) {
         const errorMessage = error.response.data.message;
-        alert(errorMessage + " 🙁");
+        swal(errorMessage + " 🙁");
       } else if (error.request) {
         console.error("No se recibió respuesta del servidor");
       } else {
         console.error("Error al configurar la solicitud:", error.message);
       }
 
-      alert(
+      swal(
         "Hubo un error al intentar iniciar sesión. Por favor, inténtalo de nuevo. 🙁"
       );
     }

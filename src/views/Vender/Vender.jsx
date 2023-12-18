@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 import NavB from "../../components/Navbar/navbar";
+import Footer from "../../components/footer/Footer";
 import axios from "axios";
+import swal from 'sweetalert';
 import "./index.css";
-import { useNavigate } from "react-router-dom";
+
 
 const Vender = () => {
   const navigate = useNavigate();
@@ -39,10 +42,10 @@ const Vender = () => {
       });
 
       console.log(response.data);
-      alert("Producto subido con éxito 😀");
+      swal("Producto subido con éxito 😀");
     } catch (error) {
       console.error("Error en la solicitud:", error);
-      alert(
+      swal(
         "Hubo un error al subir el producto. Por favor, inténtalo de nuevo. 🙁"
       );
     }
@@ -51,7 +54,7 @@ const Vender = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token) {
-      alert("Debes iniciar sesión para vender productos.");
+      swal("Ups","Debes iniciar sesión para vender productos.", "warning");
       navigate("/");
     }
   }, []);
@@ -106,11 +109,12 @@ const Vender = () => {
             onChange={handleInputChange}
           />
           <br />
-          <Button variant="primary" onClick={handleVender}>
+          <Button variant="btn btn-dark btn-lg" onClick={handleVender}>
             Subir
           </Button>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
