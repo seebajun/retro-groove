@@ -1,4 +1,9 @@
 /* LikesView.css */
+.miContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .likes-container {
     padding: 20px;
   }
@@ -6,6 +11,7 @@
   .likes-container h1 {
     font-size: 24px;
     margin-bottom: 20px;
+  
   }
   
   .likes-grid {
@@ -19,6 +25,7 @@
     border-radius: 8px;
     overflow: hidden;
     transition: transform 0.2s ease-in-out;
+    margin-top: 10px;
   }
   
   .like-item:hover {
@@ -26,7 +33,7 @@
   }
   
   .like-item img {
-    width: 100%;
+    width: 650px;
     height: 150px; /* Ajusta según tu preferencia */
     object-fit: cover;
   }
@@ -34,7 +41,7 @@
   .like-text {
     padding: 10px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
   }
   
@@ -50,3 +57,65 @@
     font-size: 18px;
   }
   
+  @media (max-width: 768px) {
+
+    /* LikesView.css */
+.miContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.likes-container {
+    padding: 20px;
+  }
+  
+  .likes-container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  
+  }
+  
+  .likes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .like-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+    margin-top: 10px;
+  }
+  
+  .like-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .like-item img {
+    width: 350px;
+    height: 150px; /* Ajusta según tu preferencia */
+    object-fit: cover;
+  }
+  
+  .like-text {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .like-text h3 {
+    margin: 0;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .like-text button {
+    font-size: 18px;
+  }
+
+  }

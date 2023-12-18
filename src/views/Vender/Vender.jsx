@@ -1,24 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Form, Button, Col, Row, InputGroup } from "react-bootstrap";
-import NavB from "../../components/Navbar/navbar";
-import axios from "axios";
-import "./index.css";
 import { useNavigate } from "react-router-dom";
-
+import { Form, Button } from "react-bootstrap";
+import NavB from "../../components/Navbar/navbar";
+import Footer from "../../components/footer/Footer";
+import axios from "axios";
+import swal from 'sweetalert';
+import "./index.css";
 
 const Vender = () => {
-  // const [validated, setValidated] = useState(false);
-
-  // const handleSubmit = (event) => {
-  //   const form = event.currentTarget;
-  //   if (form.checkValidity() === false) {
-  //     event.preventDefault();
-  //     event.stopPropagation();
-  //   }
-
-  //   setValidated(true);
-  // };
-
   const navigate = useNavigate();
   const [producto, setProducto] = useState({
     titulo: "",
@@ -42,18 +31,6 @@ const Vender = () => {
     const token = localStorage.getItem("token");
     console.log("Token:", token);
 
-    if (
-      producto.titulo === "" ||
-      producto.descripcion === "" ||
-      producto.formato === "" ||
-      producto.imagen === "" ||
-      producto.precio === 0
-    ) {
-      alert("Debes llenar todos los campos");
-      return;
-    }
-
-
     try {
       console.log("axios vender", producto);
       const response = await axios.post(urlServer + endpoint, producto, {
@@ -64,10 +41,10 @@ const Vender = () => {
       });
 
       console.log(response.data);
-      alert("Producto subido con éxito 😀");
+      swal("Producto subido con éxito 😀");
     } catch (error) {
       console.error("Error en la solicitud:", error);
-      alert(
+      swal(
         "Hubo un error al subir el producto. Por favor, inténtalo de nuevo. 🙁"
       );
     }
@@ -76,7 +53,7 @@ const Vender = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token) {
-      alert("Debes iniciar sesión para vender productos.");
+      swal("Ups","Debes iniciar sesión para vender productos.", "warning");
       navigate("/");
     }
   }, []);
@@ -84,93 +61,6 @@ const Vender = () => {
   return (
     <>
       <NavB />
-
-      {/* <Form noValidate validated={validated} onSubmit={handleSubmit}>
-      <Row className="mb-3">
-        <Form.Group as={Col} md="4" controlId="validationCustom01">
-          <Form.Label>Titulo</Form.Label>
-          <Form.Control
-            required
-            type="text"
-            placeholder="Titulo"
-            name="titulo"
-            value={producto.titulo}
-            onChange={handleInputChange}
-          />
-          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group as={Col} md="4" controlId="validationCustom02">
-          <Form.Label>Describe tu producto</Form.Label>
-          <Form.Control
-            required
-            type="text"
-            placeholder="descripcion"
-            name="descripcion"
-            value={producto.descripcion}
-            onChange={handleInputChange}
-          />
-          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group as={Col} md="4" controlId="validationCustomUsername">
-          <Form.Label>Username</Form.Label>
-          <InputGroup hasValidation>
-            <InputGroup.Text id="inputGroupPrepend">🎵</InputGroup.Text>
-            <Form.Select
-            aria-label="Default select example"
-            name="formato"
-            value={producto.formato}
-            onChange={handleInputChange}
-          >
-            <option>Formato</option>
-            <option value="Vinilo">Vinilo</option>
-            <option value="CDs">CDs</option>
-            <option value="Cassete">Cassete</option>
-          </Form.Select>
-            <Form.Control.Feedback type="invalid">
-              Please choose a username.
-            </Form.Control.Feedback>
-          </InputGroup>
-        </Form.Group>
-      </Row>
-      <Row className="mb-3">
-        <Form.Group as={Col} md="6" controlId="validationCustom03">
-          <Form.Label>Imagen</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Imagen"
-            name="imagen"
-            value={producto.imagen}
-            onChange={handleInputChange}
-          />
-          <Form.Control.Feedback type="invalid">
-            Please provide a valid city.
-          </Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group as={Col} md="3" controlId="validationCustom04">
-          <Form.Label>Precio</Form.Label>
-          <Form.Control
-            type="number"
-            placeholder="Precio"
-            name="precio"
-            value={producto.precio}
-            onChange={handleInputChange}
-          />
-          <Form.Control.Feedback type="invalid">
-            Please provide a valid state.
-          </Form.Control.Feedback>
-        </Form.Group>
-      </Row>
-      <Form.Group className="mb-3">
-        <Form.Check
-          required
-          label="Agree to terms and conditions"
-          feedback="You must agree before submitting."
-          feedbackType="invalid"
-        />
-      </Form.Group>
-      <Button type="submit" onClick={handleVender}>Submit form</Button>
-    </Form> */}
-
       <div className="contenedorMain">
         <div className="venderContenedor">
           <h1>Vender</h1>
@@ -218,18 +108,12 @@ const Vender = () => {
             onChange={handleInputChange}
           />
           <br />
-          <Form.Check
-          required
-          label="Acepto los terminos y condiciones"
-          feedback="Debes aceptar los terminos y condiciones."
-          feedbackType="invalid"
-          />
-          <br />
-          <Button variant="primary" onClick={handleVender} type="submit">
+          <Button variant="dark" size="lg" onClick={handleVender}>
             Subir
           </Button>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

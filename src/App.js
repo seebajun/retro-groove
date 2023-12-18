@@ -8,19 +8,20 @@ import "./index.css";
 //views
 
 import Home from "./views/Home/Home.jsx";
-import Landing from "./views/Landing/landing.jsx";
+import Landing from "./views/Landing/Landing.jsx";
 import Perfil from "./views/Perfil/Perfil.jsx";
 import Producto from "./views/Producto/Producto.jsx";
 import Registrarse from "./views/Registrarse/Registrarse.jsx";
 import Favoritos from "./views/Likes/Likes.jsx";
 import Vender from "./views/Vender/Vender.jsx";
 
-function App() { 
+function App() {
   const productos = require("./productos.json");
   const [data, setData] = useState(productos);
 
   const [total, setTotal] = useState(0);
-  const sharedState = { data, setData, total, setTotal };
+  const sharedState = { data, setData, total, setTotal }
+
   return (
     <Context.Provider value={sharedState}>
       <BrowserRouter>

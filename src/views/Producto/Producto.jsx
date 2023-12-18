@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Button } from "react-bootstrap";
 import { useParams, useNavigate } from "react-router-dom";
+import { Button } from "react-bootstrap";
+
 import NavB from "../../components/Navbar/navbar.jsx";
 import Footer from "../../components/footer/Footer.jsx";
+
 import axios from "axios";
+import swal from 'sweetalert';
 import "./index.css";
 
 const Producto = () => {
@@ -64,14 +67,11 @@ const Producto = () => {
       );
 
       if (productoEnFavoritos) {
-        alert("El producto ya está en favoritos");
+        swal("Ya lo tienes!", "El producto ya existe en favoritos", "warning");
       } else {
-
-        const endpointFavoritos2 = `/favoritos/${responseIdProducto.data.id}`;
-
         await axios.post(
-          urlServer + endpointFavoritos2,
-          { idProducto : responseIdProducto.data.id  },
+          urlServer + endpointFavoritos +`${responseIdProducto.data.id}`,
+          {},
           {
             headers: {
               "Content-Type": "application/json",
@@ -80,7 +80,7 @@ const Producto = () => {
           }
         );
         console.log("Producto agregado a favoritos correctamente");
-        alert("Producto agregado a favoritos correctamente");
+        swal("Excelente!", "Producto agregado a favoritos correctamente", "success");;
       }
     } catch (error) {
       console.error("Error al agregar producto a favoritos:", error);
@@ -90,7 +90,7 @@ const Producto = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token) {
-      alert("Debes iniciar sesión para vender productos.");
+      swal("Debes iniciar sesión para vender productos.");
       navigate('/');
     }
   }, []);
@@ -107,9 +107,9 @@ const Producto = () => {
               <h5>{`$${producto.precio}.-`}</h5>
               <h5>{producto.descripcion}</h5>
               <div className="botones">
-                <Button variant="primary">🛒</Button>
-                <Button variant="primary" onClick={agregarAFavoritos}>
-                  ❤
+                <Button variant="btn btn-dark btn-lg">🛒</Button>
+                <Button variant="btn btn-dark btn-lg" onClick={agregarAFavoritos}>
+                  ⭐
                 </Button>
               </div>
             </div>
