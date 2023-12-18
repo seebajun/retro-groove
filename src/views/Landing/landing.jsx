@@ -4,7 +4,9 @@ import NavB from "../../components/Navbar/navbar";
 import Posts from "../../components/miApi/miapi";
 import Hero from "../../components/hero/hero";
 import Footer from "../../components/footer/Footer";
+import swal from "sweetalert";
 import "./landing.css";
+
 
 const Landing = () => {
   const navigate = useNavigate();
@@ -12,8 +14,8 @@ const Landing = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token) {
-      alert("Debes iniciar sesión para vender productos.");
-      navigate("/");
+      swal("Debes iniciar sesión para vender productos.");
+      navigate('/');
     }
   }, []);
 
