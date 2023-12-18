@@ -1,4 +1,5 @@
 import { useEffect, useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -10,6 +11,7 @@ import axios from "axios";
 function Posts() {
     // mostrar landing2 en cards
     const [posts, setPosts] = useState([]);
+    const navigate = useNavigate();
     // const { user } = useContext(Context);
     const token = localStorage.getItem("token");
     console.log("Token:", token);
@@ -35,7 +37,8 @@ function Posts() {
         handleGetPosts();
     }, []); 
     return (
-        <Container>
+        <div className="miContainer">
+            <Container>
             <Row>
                 {posts.map((post) => (
                     <Col key={post._id} xs={12} sm={6} md={4} lg={3}>
@@ -44,14 +47,16 @@ function Posts() {
                             <Card.Body>
                                 <Card.Title>{post.titulo}</Card.Title>
                                 <Card.Text>{post.formato}</Card.Text>
-                                <Card.Text>{post.precio}</Card.Text>
-                                <Button variant="primary">Comprar</Button>
+                                <Card.Text className="fw-bold">${post.precio}</Card.Text>
+                                <Button variant="primary" onClick={() => navigate(`/producto/${post.titulo}`)}>Ver más</Button>
+
                             </Card.Body>
                         </Card>
                     </Col>
                 ))}
             </Row>
         </Container>
+        </div>
     );
 }
 
