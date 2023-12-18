@@ -66,12 +66,11 @@ const Producto = () => {
       if (productoEnFavoritos) {
         alert("El producto ya está en favoritos");
       } else {
-
         const endpointFavoritos2 = `/favoritos/${responseIdProducto.data.id}`;
 
         await axios.post(
           urlServer + endpointFavoritos2,
-          { idProducto : responseIdProducto.data.id  },
+          { idProducto: responseIdProducto.data.id },
           {
             headers: {
               "Content-Type": "application/json",
@@ -91,7 +90,7 @@ const Producto = () => {
     const token = localStorage.getItem("token");
     if (!token) {
       alert("Debes iniciar sesión para vender productos.");
-      navigate('/');
+      navigate("/");
     }
   }, []);
 
