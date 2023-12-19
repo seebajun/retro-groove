@@ -1,20 +1,18 @@
 import React, { useEffect, useState } from "react";
-import LikeItem from "../../components/Likesitem/likeitem";
-import Navbar from "../../components/Navbar/navbar";
+import LikeItem from "../../components/Likesitem copy/likeitem.jsx";
+import Navbar from "../../components/Navbar/navbar.jsx";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import "./likes.css";
 import Footer from "../../components/footer/Footer.jsx";
-import Hero from "../../components/hero/hero.jsx";
 import { Container, Row, Col, Card, Button, Pagination } from "react-bootstrap";
 
-const Likes = () => {
+const MisPosts = () => {
   const [likes, setLikes] = useState([]);
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
   console.log("Token:", token);
   const urlServer = "http://localhost:2999";
-  const endpoint = "/favoritos";
+  const endpoint = "/publicaciones";
   console.log("Token:", token);
   const handleGetLikes = async () => {
     try {
@@ -48,7 +46,6 @@ const Likes = () => {
   return (
     <>
       <Navbar />
-      <Hero title="Estan esperando por ti..." />
       <div className="miContainer">
         <Row className="justify-content-center">
           {likes.map((productos) => (
@@ -63,4 +60,4 @@ const Likes = () => {
   );
 }
 
-export default Likes;
+export default MisPosts;

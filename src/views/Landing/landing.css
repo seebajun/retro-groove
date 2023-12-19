@@ -1,8 +1,6 @@
 .miContainer{
     background-color: #fff9eb;
     padding-bottom: 50px;
-
-
 }
 
 #contenedor{
@@ -16,12 +14,15 @@
 }
 
 .card{
-   
     border-radius: 30px;
     padding: 20px;
     margin: 30px 0px 0px 0px;
     -webkit-box-shadow: 1px 1px 7px 1px rgba(150,150,150,1);
     -moz-box-shadow: 1px 1px 7px 1px rgba(150,150,150,1);
     box-shadow: 1px 1px 7px 1px rgba(150,150,150,1);
+}
+
+.like-item:hover {
+    transform: scale(1.05);
 }
 

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 import NavB from "../../components/Navbar/navbar";
+import Hero from "../../components/hero/hero";
 import Footer from "../../components/footer/Footer";
 import axios from "axios";
 import swal from 'sweetalert';
@@ -61,6 +62,7 @@ const Vender = () => {
   return (
     <>
       <NavB />
+      <Hero title="Vende tus productos de forma gratuita" />
       <div className="contenedorMain">
         <div className="venderContenedor">
           <h1>Vender</h1>
@@ -109,7 +111,7 @@ const Vender = () => {
           />
           <br />
           <Button variant="dark" size="lg" onClick={handleVender}>
-            Subir
+              Publicar
           </Button>
         </div>
       </div>
