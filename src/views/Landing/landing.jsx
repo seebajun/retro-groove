@@ -22,7 +22,7 @@ const Landing = () => {
   return (
     <>
       <NavB />
-      <Hero />
+      <Hero title="Amplia tu coleccion musical en Retro Groove"/>
       <Posts />
       <Footer />
     </>

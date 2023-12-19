@@ -14,6 +14,7 @@ import Producto from "./views/Producto/Producto.jsx";
 import Registrarse from "./views/Registrarse/Registrarse.jsx";
 import Favoritos from "./views/Likes/Likes.jsx";
 import Vender from "./views/Vender/Vender.jsx";
+import MisPosts from "./views/misPosts/MisPosts.jsx";
 
 function App() {
   const productos = require("./productos.json");
@@ -33,6 +34,7 @@ function App() {
           <Route path="/favoritos" element={<Favoritos />} />
           <Route path="/registrarse" element={<Registrarse />} />
           <Route path="/producto/:titulo" element={<Producto />} />
+          <Route path="/myposts" element={<MisPosts />} />
         </Routes>
       </BrowserRouter>
     </Context.Provider>

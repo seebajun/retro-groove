@@ -109,7 +109,7 @@ const Vender = () => {
           />
           <br />
           <Button variant="dark" size="lg" onClick={handleVender}>
-            Subir
+              Publicar
           </Button>
         </div>
       </div>
