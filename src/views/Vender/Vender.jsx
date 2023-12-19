@@ -63,7 +63,7 @@ const Vender = () => {
     <>
       <NavB />
       <Hero title="Vende tus productos de forma gratuita" />
-      <div className="contenedorMain">
+      <div className="contenedorMain body">
         <div className="venderContenedor">
           <h1>Vender</h1>
           <Form.Control

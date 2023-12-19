@@ -50,7 +50,7 @@ const Registro = () => {
   };
     
   return (
-   <div className='contenedor'>
+   <div className='contenedor body'>
       <div className="card-registrarse">
         <div className="titulo-registrarse">
           <h1>Registrarse</h1>
