@@ -50,7 +50,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Card, Button } from "react-bootstrap";
 import axios from "axios";
-import Swal from "sweetalert2";
+import Swal from "sweetalert";
 
 const LikeItem = ({ productos }) => {
   const navigate = useNavigate();
