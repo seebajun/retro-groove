@@ -90,14 +90,15 @@ const Home = () => {
             Groove{" "}
           </h1>
         </div>
-        <div className="imagen-fondo">
+       <div className="imagen-fondo">
           <img
-            src="https://assets.stickpng.com/images/5856b3da4f6ae202fedf2794.png"
+            src=""//"https://assets.stickpng.com/images/5856b3da4f6ae202fedf2794.png
             alt="Imagen"
             className="imagen-movil"
             id="imagen"
           />
         </div>
+
         <div className="card-login">
           <div className="card-body">
             <div className="titulo">
@@ -136,7 +137,7 @@ const Home = () => {
                 <button
                   type="button"
                   onClick={handleLogin}
-                  className="btn btn-dark btn-lg"
+                  className="btn btn-outline-dark btn-lg"
                 >
                   Ingresar
                 </button>
