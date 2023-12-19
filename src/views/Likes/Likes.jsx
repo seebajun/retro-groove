@@ -4,6 +4,7 @@ import Navbar from "../../components/Navbar/navbar";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./likes.css";
+import Footer from "../../components/footer/Footer.jsx";
 
 const Likes = () => {
   const [likes, setLikes] = useState([]);
@@ -52,6 +53,7 @@ const Likes = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </>
   );
 }

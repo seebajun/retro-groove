@@ -101,7 +101,7 @@ const Producto = () => {
       <div className="contenedor">
         <div key={producto.id} className="contenedorCard">
           <div className="cardContent">
-            <img src={producto.imagen} alt={producto.titulo} />
+            <img src={producto.imagen} alt={producto.titulo} width={500}/>
             <div className="cardText">
               <h1>{producto.titulo}</h1>
               <h5>{`$${producto.precio}.-`}</h5>
