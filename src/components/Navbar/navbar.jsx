@@ -56,11 +56,11 @@ const NavB = () => {
             <Nav.Link href="/favoritos">
               <i class="fa-solid fa-star"></i> Favoritos
             </Nav.Link>
-            <Nav.Link href="/myposts" className="">
-              Mis publicaciones
+            <Nav.Link href="/publicaciones" className="">
+            <i class="fa-solid fa-shop"></i> Mis publicaciones
             </Nav.Link>
-            <Nav.Link href="/perfil" className="">
-              Bienvenido, {user.nombre}
+            <Nav.Link href="/perfil" className="ml-auto">
+            <i class="fa-regular fa-user"></i> Bienvenido, {user.nombre}
             </Nav.Link>
             
           </Nav>

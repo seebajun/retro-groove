@@ -7,6 +7,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import Footer from "../../components/footer/Footer";
 import { useNavigate } from "react-router-dom";
+import Hero from "../../components/hero/hero";
 
 const Perfil = () =>{
         const navigate = useNavigate();
@@ -51,6 +52,7 @@ const Perfil = () =>{
         return(
             <>
             <NavB />
+            <Hero title={user.name} />
             <div className="miContainer">
             <Container className="">
                 <Row>

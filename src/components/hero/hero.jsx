@@ -1,4 +1,4 @@
-import "./hero.css";
+// import "./hero.css";
 
 const Hero = (props) => {
   return (

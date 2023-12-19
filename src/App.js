@@ -34,7 +34,7 @@ function App() {
           <Route path="/favoritos" element={<Favoritos />} />
           <Route path="/registrarse" element={<Registrarse />} />
           <Route path="/producto/:titulo" element={<Producto />} />
-          <Route path="/myposts" element={<MisPosts />} />
+          <Route path="/publicaciones" element={<MisPosts />} />
         </Routes>
       </BrowserRouter>
     </Context.Provider>
