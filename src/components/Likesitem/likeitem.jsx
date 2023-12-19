@@ -24,7 +24,6 @@
 //       alert("Hubo un error al eliminar el producto de favoritos. Por favor, inténtalo de nuevo." + error);
 //     }
 //   };
-  
 
 //   return (
 //   <div className="padre">
@@ -39,7 +38,7 @@
 //       </div>
 //     </div>
 //   </div>
-    
+
 //   );
 // };
 
@@ -49,7 +48,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Card, Button } from "react-bootstrap";
 import axios from "axios";
-import swal from 'sweetalert';
+import swal from "sweetalert";
 
 const LikeItem = ({ productos }) => {
   const navigate = useNavigate();
@@ -66,13 +65,20 @@ const LikeItem = ({ productos }) => {
         },
       });
       // alert("Producto eliminado de favoritos correctamente");
-      swal("Excelente!", "Producto eliminado de favoritos correctamente 😀", "success");
+      swal(
+        "Excelente!",
+        "Producto eliminado de favoritos correctamente 😀",
+        "success"
+      );
       setTimeout(() => {
         window.location.reload();
       }, 1500);
     } catch (error) {
       console.error("Error al eliminar favorito:", error);
-      alert("Hubo un error al eliminar el producto de favoritos. Por favor, inténtalo de nuevo." + error);
+      alert(
+        "Hubo un error al eliminar el producto de favoritos. Por favor, inténtalo de nuevo." +
+          error
+      );
     }
   };
 
@@ -80,11 +86,19 @@ const LikeItem = ({ productos }) => {
     <div className="padre">
       <div className="likeitem-container">
         <div className="like-item">
-          <img src={productos.imagen} alt={productos.titulo} onClick={() => navigate(`/producto/${productos.titulo}`)} />
+          <img
+            src={productos.imagen}
+            alt={productos.titulo}
+            onClick={() => navigate(`/producto/${productos.titulo}`)}
+          />
           <div className="like-text d-flex flex-column">
             <h3 className="mb-3">{productos.titulo}</h3>
-            <Button variant="danger" className="fs-6" onClick={handleEliminarFavorito}>
-            <i className="fa-solid fa-trash"></i>
+            <Button
+              variant="danger"
+              className="fs-6"
+              onClick={handleEliminarFavorito}
+            >
+              <i className="fa-solid fa-trash"></i>
             </Button>
           </div>
         </div>
@@ -94,4 +108,3 @@ const LikeItem = ({ productos }) => {
 };
 
 export default LikeItem;
-

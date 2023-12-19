@@ -58,6 +58,6 @@ const MisPosts = () => {
       <Footer />
     </>
   );
-}
+};
 
 export default MisPosts;

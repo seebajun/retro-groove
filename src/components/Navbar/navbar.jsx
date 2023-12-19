@@ -36,6 +36,15 @@ const NavB = () => {
       );
     }
   };
+
+  const handleLogout = () => {
+    // Eliminar el token al cerrar sesión
+    localStorage.removeItem("token");
+
+    // Redirigir a la página de inicio
+    navigate("/");
+  };
+
   useEffect(() => {
     handleGetUser();
   }, []);
@@ -57,12 +66,15 @@ const NavB = () => {
               <i class="fa-solid fa-star"></i> Favoritos
             </Nav.Link>
             <Nav.Link href="/publicaciones" className="">
-            <i class="fa-solid fa-shop"></i> Mis publicaciones
+              <i class="fa-solid fa-shop"></i> Mis publicaciones
             </Nav.Link>
             <Nav.Link href="/perfil" className="ml-auto">
-            <i class="fa-regular fa-user"></i> Bienvenido, {user.nombre}
+              <i class="fa-regular fa-user"></i> Bienvenido, {user.nombre}
             </Nav.Link>
-            
+            <Nav.Link href="/" onClick={handleLogout}>
+              {" "}
+              logout{" "}
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
