@@ -190,7 +190,7 @@ function Posts() {
     const [posts, setPosts] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [searchTerm, setSearchTerm] = useState("");
-    const [selectedFormat, setSelectedFormat] = useState(""); // Nuevo estado para el formato seleccionado
+    const [selectedFormat, setSelectedFormat] = useState("");
     const navigate = useNavigate();
     const token = localStorage.getItem("token");
     const urlServer = "http://localhost:2999";
@@ -220,7 +220,6 @@ function Posts() {
     const indexOfLastProduct = currentPage * productsPerPage;
     const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
 
-    // Filtrar productos por título y formato
     const filteredProducts = posts.filter(post => 
         post.titulo.toLowerCase().includes(searchTerm.toLowerCase()) &&
         (selectedFormat === "" || post.formato === selectedFormat)
@@ -244,7 +243,6 @@ function Posts() {
         <div className="miContainer">
             <br />
             <Container>
-                {/* Barra de búsqueda */}
                 <Row>
                     <Col xs={12} sm={6}>
                         <Form.Group controlId="searchForm">
@@ -269,7 +267,6 @@ function Posts() {
                         </Form.Group>
                     </Col>
                 </Row>
-                {/* Fin de la barra de búsqueda */}
                 <Row className="mt-5">
                     {currentProducts.map((post) => (
                         <Col key={post._id} xs={12} sm={6} md={4} lg={3} className="">

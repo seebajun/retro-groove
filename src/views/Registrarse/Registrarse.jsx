@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./registrarse.css";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const Registro = () => {
   const [usuario, setUsuario] = useState({
@@ -21,7 +22,20 @@ const Registro = () => {
     });
   };
 
+  const validarCampos = () => {
+    return Object.values(usuario).every((value) => value.trim() !== "");
+  };
+
   const handleRegistro = async () => {
+    if (!validarCampos()) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Por favor, completa todos los campos.",
+      });
+      return;
+    }
+
     const urlRegistro = "http://localhost:2999";
     const endpoint = "/registrarse";
 
@@ -36,16 +50,19 @@ const Registro = () => {
       if (!response.data || response.status !== 201) {
         throw new Error("Error en la solicitud de registro");
       }
-
-      // Manejar la respuesta exitosa del servidor
-      alert("Usuario registrado correctamente :)");
-      // Puedes realizar acciones adicionales, como redirigir al usuario a la página de inicio de sesión
+      Swal.fire(
+        "¡Registrado!",
+        "Usuario registrado correctamente :)",
+        "success"
+      );
       navigate("/landing");
     } catch (error) {
-      // Manejar errores en la solicitud
-      alert("Error en la solicitud de registro");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Error en la solicitud de registro",
+      });
       console.error("Error en la solicitud:", error);
-      // Puedes mostrar un mensaje de error al usuario
     }
   };
 
