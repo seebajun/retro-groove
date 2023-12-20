@@ -33,6 +33,7 @@ const NavB = () => {
   useEffect(() => {
     handleGetUser();
   }, []);
+
   return (
     <Navbar className="navbar" expand="lg" variant="dark">
       <Container>
@@ -65,3 +66,4 @@ const NavB = () => {
 };
 
 export default NavB;
+
