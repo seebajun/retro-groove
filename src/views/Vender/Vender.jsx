@@ -5,26 +5,29 @@ import NavB from "../../components/Navbar/navbar";
 import Hero from "../../components/hero/hero";
 import Footer from "../../components/footer/Footer";
 import axios from "axios";
-import swal from 'sweetalert';
+import swal from "sweetalert";
 import "./index.css";
 
 const Vender = () => {
   const navigate = useNavigate();
+  const [botonHabilitado, setBotonHabilitado] = useState(false);
   const [producto, setProducto] = useState({
     titulo: "",
     descripcion: "",
     formato: "",
     imagen: "",
-    precio: 0,
+    precio: "",
   });
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setProducto({
-      ...producto,
-      [name]: value,
-    });
-  };
+    const { name, value, type, checked } = e.target;
+    const inputValue = type === "checkbox" ? checked : value;
+
+    setProducto((prevProducto) => ({
+      ...prevProducto,
+      [name]: inputValue,
+    }));
+  }
 
   const handleVender = async () => {
     const urlServer = "http://localhost:2999";
@@ -54,10 +57,21 @@ const Vender = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token) {
-      swal("Ups","Debes iniciar sesión para vender productos.", "warning");
+      swal("Ups", "Debes iniciar sesión para vender productos.", "warning");
       navigate("/");
     }
   }, []);
+
+  useEffect(() => {
+    const todosDatosCompletos =
+      producto.titulo !== "" &&
+      producto.descripcion !== "" &&
+      producto.formato !== "" &&
+      producto.imagen !== "" &&
+      producto.precio !== "" &&
+      producto.aceptarTerminos;
+    setBotonHabilitado(todosDatosCompletos);
+  }, [producto]);
 
   return (
     <>
@@ -110,8 +124,22 @@ const Vender = () => {
             onChange={handleInputChange}
           />
           <br />
-          <Button variant="dark" size="lg" onClick={handleVender}>
-              Publicar
+          <Form.Check
+             type="checkbox"
+             id="aceptarTerminos"
+             label="Acepto los términos y condiciones"
+             name="aceptarTerminos"
+             checked={producto.aceptarTerminos}
+             onChange={handleInputChange}
+          />
+           <br />
+          <Button
+           variant="dark"
+           size="lg"
+           onClick={handleVender}
+           disabled={!producto.aceptarTerminos}
+          >
+            Publicar
           </Button>
         </div>
       </div>
