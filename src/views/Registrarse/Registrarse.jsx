@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import './registrarse.css';
-import { useNavigate, Link } from 'react-router-dom';
-import axios from 'axios';
-import Swal from 'sweetalert2';
+import React, { useState } from "react";
+import "./registrarse.css";
+import { useNavigate, Link } from "react-router-dom";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const Registro = () => {
   const [usuario, setUsuario] = useState({
-    nombre: '',
-    apellido: '',
-    email: '',
-    password: '',
+    nombre: "",
+    apellido: "",
+    email: "",
+    password: "",
   });
 
   const navigate = useNavigate();
@@ -23,47 +23,51 @@ const Registro = () => {
   };
 
   const validarCampos = () => {
-    return Object.values(usuario).every((value) => value.trim() !== '');
+    return Object.values(usuario).every((value) => value.trim() !== "");
   };
 
   const handleRegistro = async () => {
     if (!validarCampos()) {
       Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Por favor, completa todos los campos.',
+        icon: "error",
+        title: "Oops...",
+        text: "Por favor, completa todos los campos.",
       });
       return;
     }
 
-    const urlRegistro = 'http://localhost:2999';
-    const endpoint = '/registrarse';
+    const urlRegistro = "http://localhost:2999";
+    const endpoint = "/registrarse";
 
     try {
-      console.log('axios registro');
+      console.log("axios registro");
       const response = await axios.post(urlRegistro + endpoint, usuario, {
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
       });
 
       if (!response.data || response.status !== 201) {
-        throw new Error('Error en la solicitud de registro');
+        throw new Error("Error en la solicitud de registro");
       }
-      Swal.fire('¡Registrado!', 'Usuario registrado correctamente :)', 'success');
-      navigate('/landing');
+      Swal.fire(
+        "¡Registrado!",
+        "Usuario registrado correctamente :)",
+        "success"
+      );
+      navigate("/landing");
     } catch (error) {
       Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Error en la solicitud de registro',
+        icon: "error",
+        title: "Oops...",
+        text: "Error en la solicitud de registro",
       });
-      console.error('Error en la solicitud:', error);
+      console.error("Error en la solicitud:", error);
     }
   };
-    
+
   return (
-   <div className='contenedor body'>
+    <div className="contenedor body">
       <div className="card-registrarse">
         <div className="titulo-registrarse">
           <h1>Registrarse</h1>
@@ -124,12 +128,10 @@ const Registro = () => {
           </div>
         </form>
         <p className="mt-3">
-        ¿Ya tienes una cuenta?{' '}
-        <Link to="/">Entra!</Link> 
-      </p>
-        </div>
+          ¿Ya tienes una cuenta? <Link to="/">Entra!</Link>
+        </p>
       </div>
-     
+    </div>
   );
 };
 

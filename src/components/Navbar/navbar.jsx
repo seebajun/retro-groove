@@ -2,8 +2,11 @@ import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import axios from "axios";
 import "./navbar.css";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const NavB = () => {
+  const navigate = useNavigate();
   const [user, setUser] = useState({
     nombre: "",
     apellido: "",
@@ -30,6 +33,27 @@ const NavB = () => {
       );
     }
   };
+
+  const handleLogout = async () => {
+    // Mostrar un cuadro de diálogo de confirmación personalizado con swal
+    const result = await Swal.fire({
+      title: "¿Cerrar sesión?",
+      text: "¿Estás seguro de que deseas cerrar sesión?",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Sí, cerrar sesión",
+      cancelButtonText: "Cancelar",
+    });
+
+    if (result.isConfirmed) {
+      // El usuario confirmó cerrar sesión
+      localStorage.removeItem("token");
+      navigate("/");
+    }
+  };
+
   useEffect(() => {
     handleGetUser();
   }, []);
@@ -41,7 +65,7 @@ const NavB = () => {
           Retro Groove
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse  id="basic-navbar-nav">
+        <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="d-flex">
             <Nav.Link href="/landing">Explorar</Nav.Link>
             <Nav.Link href="/vender" className="">
@@ -54,12 +78,15 @@ const NavB = () => {
               <i class="fa-solid fa-shop"></i> Mis publicaciones
             </Nav.Link>
           </Nav>
-          </Navbar.Collapse>
-          <Nav className="d-flex">
-            <Nav.Link href="/perfil" className="justify-content-end">
-              <i class="fa-regular fa-user"></i> Bienvenido, {user.nombre}
-            </Nav.Link>
-            </Nav>
+        </Navbar.Collapse>
+        <Nav className="d-flex">
+          <Nav.Link href="/perfil" className="justify-content-end">
+            <i class="fa-regular fa-user"></i> Bienvenido, {user.nombre}
+          </Nav.Link>
+          <Nav.Link href="" className="off " onClick={handleLogout}>
+            <i class="fa-solid fa-power-off"></i>
+          </Nav.Link>
+        </Nav>
       </Container>
     </Navbar>
   );

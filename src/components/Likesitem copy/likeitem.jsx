@@ -40,7 +40,11 @@ const LikeItem = ({ productos }) => {
       window.location.reload();
     } catch (error) {
       console.error("Error al eliminar producto:", error);
-      Swal.fire("Error", "Hubo un error al eliminar el producto. Por favor, inténtalo de nuevo.", "error");
+      Swal.fire(
+        "Error",
+        "Hubo un error al eliminar el producto. Por favor, inténtalo de nuevo.",
+        "error"
+      );
     }
   };
 
@@ -48,10 +52,18 @@ const LikeItem = ({ productos }) => {
     <div className="padre">
       <div className="likeitem-container">
         <div className="like-item">
-          <img src={productos.imagen} alt={productos.titulo} onClick={() => navigate(`/producto/${productos.titulo}`)} />
+          <img
+            src={productos.imagen}
+            alt={productos.titulo}
+            onClick={() => navigate(`/producto/${productos.titulo}`)}
+          />
           <div className="like-text d-flex flex-column">
             <h3 className="mb-3">{productos.titulo}</h3>
-            <Button variant="danger" className="fs-6" onClick={handleEliminarProducto}>
+            <Button
+              variant="danger"
+              className="fs-6"
+              onClick={handleEliminarProducto}
+            >
               <i className="fa-solid fa-trash"></i>
             </Button>
           </div>
