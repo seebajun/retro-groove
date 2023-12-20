@@ -53,7 +53,7 @@ const Perfil = () =>{
             <>
             <NavB />
             <Hero title={user.name} />
-            <div className="miContainer">
+            <div className="miContainer body">
             <Container className="">
                 <Row>
                     <Col sm={6}>

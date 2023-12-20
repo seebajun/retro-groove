@@ -98,7 +98,7 @@ const Producto = () => {
   return (
     <>
       <NavB />
-      <div className="contenedor">
+      <div className="contenedor body">
         <div key={producto.id} className="contenedorCard">
           <div className="cardContent">
             <img src={producto.imagen} alt={producto.titulo} width={500}/>

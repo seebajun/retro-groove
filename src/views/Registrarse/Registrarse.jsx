@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import './registrarse.css';
-import { useNavigate, Link } from 'react-router-dom';
-import axios from 'axios';
+import React, { useState } from "react";
+import "./registrarse.css";
+import { useNavigate, Link } from "react-router-dom";
+import axios from "axios";
 
 const Registro = () => {
   const [usuario, setUsuario] = useState({
-    nombre: '',
-    apellido: '',
-    email: '',
-    password: '',
+    nombre: "",
+    apellido: "",
+    email: "",
+    password: "",
   });
 
   const navigate = useNavigate();
@@ -22,35 +22,35 @@ const Registro = () => {
   };
 
   const handleRegistro = async () => {
-    const urlRegistro = 'http://localhost:2999';
-    const endpoint = '/registrarse';
+    const urlRegistro = "http://localhost:2999";
+    const endpoint = "/registrarse";
 
     try {
-      console.log('axios registro');
+      console.log("axios registro");
       const response = await axios.post(urlRegistro + endpoint, usuario, {
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
       });
 
       if (!response.data || response.status !== 201) {
-        throw new Error('Error en la solicitud de registro');
+        throw new Error("Error en la solicitud de registro");
       }
 
       // Manejar la respuesta exitosa del servidor
-      alert('Usuario registrado correctamente :)');
+      alert("Usuario registrado correctamente :)");
       // Puedes realizar acciones adicionales, como redirigir al usuario a la página de inicio de sesión
-      navigate('/landing');
+      navigate("/landing");
     } catch (error) {
       // Manejar errores en la solicitud
-      alert('Error en la solicitud de registro');
-      console.error('Error en la solicitud:', error);
+      alert("Error en la solicitud de registro");
+      console.error("Error en la solicitud:", error);
       // Puedes mostrar un mensaje de error al usuario
     }
   };
-    
+
   return (
-   <div className='contenedor'>
+    <div className="contenedor body">
       <div className="card-registrarse">
         <div className="titulo-registrarse">
           <h1>Registrarse</h1>
@@ -111,12 +111,10 @@ const Registro = () => {
           </div>
         </form>
         <p className="mt-3">
-        ¿Ya tienes una cuenta?{' '}
-        <Link to="/">Entra!</Link> 
-      </p>
-        </div>
+          ¿Ya tienes una cuenta? <Link to="/">Entra!</Link>
+        </p>
       </div>
-     
+    </div>
   );
 };
 

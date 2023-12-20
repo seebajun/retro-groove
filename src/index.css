@@ -2,7 +2,6 @@
   margin: 0px;
   padding: 0px;
   border: 0;
-  box-sizing: border-box;
 }
 
 .hero {
@@ -23,4 +22,8 @@
     font-size: 60px; 
     color: #ffffff; 
     text-shadow: -1px 0 #3C322B, 0 1px #3C322B , 1px 0 #3C322B, 0 -1px #3C322B, -2px 2px 0 #3C322B, 2px 2px 0 #3C322B, 1px 1px #3C322B, 2px 2px #3C322B, 3px 3px #3C322B, 4px 4px #3C322B, 5px 5px #3C322B, 6px 6px #3C322B, 7px 7px #3C322B, 8px 8px #3C322B, 9px 9px #3C322B;
+}
+
+.body{
+  min-height: 90vh;
 }

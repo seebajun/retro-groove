@@ -181,7 +181,7 @@
 
 // export default Posts;
 
-import React, { useEffect, useState } from "react";
+import {React, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Container, Row, Col, Card, Button, Pagination, Form } from 'react-bootstrap';
 import axios from "axios";
