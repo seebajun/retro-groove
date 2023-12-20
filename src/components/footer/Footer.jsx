@@ -4,7 +4,7 @@ import "./footer.css";
 const Footer = () => {
   return (
     <>
-      <div className="Footer">
+      <div className="Footer p-5">
         <div className="container">
           <div className="row">
             <div className="col-md-6 col-lg-5 col-12 ft-1">
@@ -20,22 +20,22 @@ const Footer = () => {
             <div className="footer-icons col-md-6 col-lg-3 col-12 ft-2">
               <h5>Nuestras Redes</h5>
               <ul>
-                <li className="nav-item">
+                <li className="nav-item mb-2">
                   <a className="" href="/">
                     <i class="fa-brands fa-facebook"></i>
                   </a>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item mb-2">
                   <a className="" href="/">
                     <i class="fa-brands fa-twitter"></i>
                   </a>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item mb-2">
                   <a className="" href="/">
                     <i class="fa-brands fa-instagram"></i>
                   </a>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item mb-2">
                   <a className="" href="/">
                     <i class="fa-brands fa-linkedin-in"></i>
                   </a>
