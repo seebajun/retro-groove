@@ -5,8 +5,6 @@ import Navbar from "react-bootstrap/Navbar";
 import { useNavigate } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
 import "./navbar.css";
-import { useContext } from "react";
-import Context from "../../context/index";
 
 const NavB = () => {
   const navigate = useNavigate;
@@ -39,6 +37,7 @@ const NavB = () => {
   useEffect(() => {
     handleGetUser();
   }, []);
+
   return (
     <Navbar className="navbar" expand="lg" variant="dark">
       <Container>
@@ -47,22 +46,20 @@ const NavB = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="d-flex">
+          <Nav>
             <Nav.Link href="/landing">Explorar</Nav.Link>
-            <Nav.Link href="/vender" className="">
-              Vender
-            </Nav.Link>
-
+            <Nav.Link href="/vender">Vender</Nav.Link>
             <Nav.Link href="/favoritos">
-              <i class="fa-solid fa-star"></i> Favoritos
+              <i className="fa-solid fa-star"></i> Favoritos
             </Nav.Link>
-            <Nav.Link href="/publicaciones" className="">
-            <i class="fa-solid fa-shop"></i> Mis publicaciones
+            <Nav>
+              <Nav.Link href="/publicaciones" className="ml-auto">
+                <i className="fa-solid fa-shop"></i> Mis publicaciones
+              </Nav.Link>
+            </Nav>
+            <Nav.Link href="/perfil">
+              <i className="fa-regular fa-user"></i> Bienvenido, {user.nombre}
             </Nav.Link>
-            <Nav.Link href="/perfil" className="ml-auto">
-            <i class="fa-regular fa-user"></i> Bienvenido, {user.nombre}
-            </Nav.Link>
-            
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -71,3 +68,4 @@ const NavB = () => {
 };
 
 export default NavB;
+

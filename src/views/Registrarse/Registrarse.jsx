@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './registrarse.css';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
+import Swal from 'sweetalert2'; // Importa SweetAlert2
 
 const Registro = () => {
   const [usuario, setUsuario] = useState({
@@ -21,7 +22,23 @@ const Registro = () => {
     });
   };
 
+  const validarCampos = () => {
+    // Verifica si todos los campos están llenos
+    return Object.values(usuario).every((value) => value.trim() !== '');
+  };
+
   const handleRegistro = async () => {
+    // Valida los campos antes de hacer la solicitud
+    if (!validarCampos()) {
+      // Muestra una alerta con SweetAlert2 si faltan campos
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Por favor, completa todos los campos.',
+      });
+      return;
+    }
+
     const urlRegistro = 'http://localhost:2999';
     const endpoint = '/registrarse';
 
@@ -38,12 +55,16 @@ const Registro = () => {
       }
 
       // Manejar la respuesta exitosa del servidor
-      alert('Usuario registrado correctamente :)');
+      Swal.fire('¡Registrado!', 'Usuario registrado correctamente :)', 'success');
       // Puedes realizar acciones adicionales, como redirigir al usuario a la página de inicio de sesión
       navigate('/landing');
     } catch (error) {
       // Manejar errores en la solicitud
-      alert('Error en la solicitud de registro');
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Error en la solicitud de registro',
+      });
       console.error('Error en la solicitud:', error);
       // Puedes mostrar un mensaje de error al usuario
     }
