@@ -49,7 +49,7 @@ const Likes = () => {
     <>
       <Navbar />
       <Hero title="Estan esperando por ti..." />
-      <div className="miContainer">
+      <div className="miContainer body">
         <Row className="justify-content-center">
           {likes.map((productos) => (
             <Col xs={12} sm={6} md={4} lg={3}>

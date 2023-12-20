@@ -23,7 +23,7 @@ const Landing = () => {
     <>
       <NavB />
       <Hero title="Amplia tu coleccion musical en Retro Groove"/>
-      <Posts />
+      <Posts className="body" />
       <Footer />
     </>
   );

@@ -1,13 +1,9 @@
-import Container from "react-bootstrap/Container";
 import { useState, useEffect } from "react";
+import { Navbar, Nav, Container } from "react-bootstrap";
 import axios from "axios";
-import Navbar from "react-bootstrap/Navbar";
-import { useNavigate } from "react-router-dom";
-import Nav from "react-bootstrap/Nav";
 import "./navbar.css";
 
 const NavB = () => {
-  const navigate = useNavigate;
   const [user, setUser] = useState({
     nombre: "",
     apellido: "",
@@ -45,23 +41,25 @@ const NavB = () => {
           Retro Groove
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav>
+        <Navbar.Collapse  id="basic-navbar-nav">
+          <Nav className="d-flex">
             <Nav.Link href="/landing">Explorar</Nav.Link>
-            <Nav.Link href="/vender">Vender</Nav.Link>
-            <Nav.Link href="/favoritos">
-              <i className="fa-solid fa-star"></i> Favoritos
+            <Nav.Link href="/vender" className="">
+              Vender
             </Nav.Link>
-            <Nav>
-              <Nav.Link href="/publicaciones" className="ml-auto">
-                <i className="fa-solid fa-shop"></i> Mis publicaciones
-              </Nav.Link>
-            </Nav>
-            <Nav.Link href="/perfil">
-              <i className="fa-regular fa-user"></i> Bienvenido, {user.nombre}
+            <Nav.Link href="/favoritos" className="ml-auto">
+              <i class="fa-solid fa-star"></i> Favoritos
+            </Nav.Link>
+            <Nav.Link href="/publicaciones" className="ml-auto">
+              <i class="fa-solid fa-shop"></i> Mis publicaciones
             </Nav.Link>
           </Nav>
-        </Navbar.Collapse>
+          </Navbar.Collapse>
+          <Nav className="d-flex">
+            <Nav.Link href="/perfil" className="justify-content-end">
+              <i class="fa-regular fa-user"></i> Bienvenido, {user.nombre}
+            </Nav.Link>
+            </Nav>
       </Container>
     </Navbar>
   );
