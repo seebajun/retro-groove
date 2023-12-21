@@ -61,8 +61,14 @@ const NavB = () => {
   return (
     <Navbar className="navbar" expand="lg" variant="dark">
       <Container>
-        <Navbar.Brand className="titulo" href="/landing">
-          Retro Groove
+        <Navbar.Brand href="/landing">
+          <img
+            className="me-3"
+            src="./img/logo.png"
+            alt="logo"
+            width="48"
+            height="38"
+          />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -76,6 +82,9 @@ const NavB = () => {
             </Nav.Link>
             <Nav.Link href="/publicaciones" className="ml-auto">
               <i class="fa-solid fa-shop"></i> Mis publicaciones
+            </Nav.Link>
+            <Nav.Link href="/publicaciones" className="ml-auto">
+              <i class="fa-solid fa-cart-shopping"></i> Carrito
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
@@ -93,4 +102,3 @@ const NavB = () => {
 };
 
 export default NavB;
-

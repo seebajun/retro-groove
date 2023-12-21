@@ -1,11 +1,9 @@
-import { React, useState } from "react";
-
+import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Context from "./context/index";
+import Context, { MyProvider } from "./context/index"; // Importa MyProvider desde el contexto
 import "./index.css";
 
-//views
-
+// Importa tus vistas
 import Home from "./views/Home/Home.jsx";
 import Landing from "./views/Landing/Landing.jsx";
 import Perfil from "./views/Perfil/Perfil.jsx";

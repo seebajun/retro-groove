@@ -70,7 +70,7 @@
   display: flex;
   justify-content: center;
   background-color: #ebd7a5;
-  background-image: url(./img/Primera\ vista.jpg);
+  background-image: url(./img/vista1.jpg);
   background-size: cover;
 
 }
@@ -80,7 +80,7 @@
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  width: 1200px;
+  width: 1430px;
   padding: 3rem;
 }
 
@@ -100,13 +100,18 @@
 .card-login {
   background-color: white;
   display: flex;
-  width: auto;
+  width: 500px;
   padding: 1rem;
   -webkit-box-shadow: -8px 10px 13px 5px rgba(150, 150, 150, 1);
   -moz-box-shadow: -8px 10px 13px 5px rgba(150, 150, 150, 1);
   box-shadow: -8px 10px 13px 5px rgba(150, 150, 150, 1);
   border-radius: 40px;
 }
+
+form{
+  padding: 0.375rem 4.75rem;
+}
+
 .card-body {
   display: flex;
   flex-direction: column;
@@ -136,7 +141,7 @@ button {
   .home {
     height: 100vh;
     background-color: #ebd7a5;
-    background-image: url(./img/Primera\ vista.jpg);
+    background-image: url(./img/vista-movil.jpg);
     background-size: cover;
     background-repeat: no-repeat;
   }

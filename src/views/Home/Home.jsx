@@ -84,15 +84,11 @@ const Home = () => {
     <div className="home">
       <div className="contenedor-main">
         <div className="titulo-login">
-          <h1>
-            {" "}
-            Retro <br></br>
-            Groove{" "}
-          </h1>
+          <h1></h1>
         </div>
-       <div className="imagen-fondo">
+        <div className="imagen-fondo">
           <img
-            src=""//"https://assets.stickpng.com/images/5856b3da4f6ae202fedf2794.png
+            src="" //"https://assets.stickpng.com/images/5856b3da4f6ae202fedf2794.png
             alt="Imagen"
             className="imagen-movil"
             id="imagen"

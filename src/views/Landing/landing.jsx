@@ -7,7 +7,6 @@ import Footer from "../../components/footer/Footer";
 import swal from "sweetalert";
 import "./landing.css";
 
-
 const Landing = () => {
   const navigate = useNavigate();
 
@@ -15,14 +14,14 @@ const Landing = () => {
     const token = localStorage.getItem("token");
     if (!token) {
       swal("Debes iniciar sesión para vender productos.");
-      navigate('/');
+      navigate("/");
     }
   }, []);
 
   return (
     <>
       <NavB />
-      <Hero title="Amplia tu coleccion musical en Retro Groove"/>
+      <Hero title="Amplia tu coleccion musical en Retro Groove" />
       <Posts className="body" />
       <Footer />
     </>

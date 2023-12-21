@@ -6,7 +6,7 @@ import NavB from "../../components/Navbar/navbar.jsx";
 import Footer from "../../components/footer/Footer.jsx";
 
 import axios from "axios";
-import swal from 'sweetalert';
+import swal from "sweetalert";
 import "./index.css";
 
 const Producto = () => {
@@ -70,7 +70,7 @@ const Producto = () => {
         swal("Ya lo tienes!", "El producto ya existe en favoritos", "warning");
       } else {
         await axios.post(
-          urlServer + endpointFavoritos +`${responseIdProducto.data.id}`,
+          urlServer + endpointFavoritos + `${responseIdProducto.data.id}`,
           {},
           {
             headers: {
@@ -80,7 +80,11 @@ const Producto = () => {
           }
         );
         console.log("Producto agregado a favoritos correctamente");
-        swal("Excelente!", "Producto agregado a favoritos correctamente", "success");;
+        swal(
+          "Excelente!",
+          "Producto agregado a favoritos correctamente",
+          "success"
+        );
       }
     } catch (error) {
       console.error("Error al agregar producto a favoritos:", error);
@@ -91,7 +95,7 @@ const Producto = () => {
     const token = localStorage.getItem("token");
     if (!token) {
       swal("Debes iniciar sesión para vender productos.");
-      navigate('/');
+      navigate("/");
     }
   }, []);
 
@@ -101,15 +105,18 @@ const Producto = () => {
       <div className="contenedor body">
         <div key={producto.id} className="contenedorCard">
           <div className="cardContent">
-            <img src={producto.imagen} alt={producto.titulo} width={500}/>
+            <img src={producto.imagen} alt={producto.titulo} width={500} />
             <div className="cardText">
               <h1>{producto.titulo}</h1>
               <h5>{`Precio: $${producto.precio}`}</h5>
               <h5>{producto.descripcion}</h5>
               <div className="botones">
                 <Button variant="btn btn-dark btn-lg">🛒</Button>
-                <Button variant="btn btn-dark btn-lg" onClick={agregarAFavoritos}>
-                <i class="fa-solid fa-star"></i>
+                <Button
+                  variant="btn btn-dark btn-lg"
+                  onClick={agregarAFavoritos}
+                >
+                  <i class="fa-solid fa-star"></i>
                 </Button>
               </div>
             </div>
