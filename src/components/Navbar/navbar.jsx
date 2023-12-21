@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import axios from "axios";
-import "./navbar.css";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import Swal from "sweetalert2";
+import "./navbar.css";
 
 const NavB = () => {
   const navigate = useNavigate();
@@ -35,7 +35,6 @@ const NavB = () => {
   };
 
   const handleLogout = async () => {
-    // Mostrar un cuadro de diálogo de confirmación personalizado con swal
     const result = await Swal.fire({
       title: "¿Cerrar sesión?",
       text: "¿Estás seguro de que deseas cerrar sesión?",
@@ -48,7 +47,6 @@ const NavB = () => {
     });
 
     if (result.isConfirmed) {
-      // El usuario confirmó cerrar sesión
       localStorage.removeItem("token");
       navigate("/");
     }
@@ -79,6 +77,7 @@ const NavB = () => {
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
+        <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="d-flex">
           <Nav.Link href="/perfil" className="justify-content-end">
             <i class="fa-regular fa-user"></i> Bienvenido, {user.nombre}
@@ -87,6 +86,7 @@ const NavB = () => {
             <i class="fa-solid fa-power-off"></i>
           </Nav.Link>
         </Nav>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );
