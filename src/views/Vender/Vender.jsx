@@ -5,7 +5,7 @@ import NavB from "../../components/Navbar/navbar";
 import Hero from "../../components/hero/hero";
 import Footer from "../../components/footer/Footer";
 import axios from "axios";
-import swal from 'sweetalert';
+import Swal from "sweetalert2";
 import "./index.css";
 
 const Vender = () => {
@@ -15,15 +15,17 @@ const Vender = () => {
     descripcion: "",
     formato: "",
     imagen: "",
-    precio: 0,
+    precio: "",
   });
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setProducto({
-      ...producto,
-      [name]: value,
-    });
+    const { name, value, type, checked } = e.target;
+    const inputValue = type === "checkbox" ? checked : value;
+
+    setProducto((prevProducto) => ({
+      ...prevProducto,
+      [name]: inputValue,
+    }));
   };
 
   const handleVender = async () => {
@@ -42,10 +44,41 @@ const Vender = () => {
       });
 
       console.log(response.data);
-      swal("Producto subido con éxito 😀");
+
+      const result = await Swal.fire({
+        title: "Producto subido con éxito 😀",
+        text: "¿Qué te gustaría hacer a continuación?",
+        icon: "success",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Ir a publicaciones",
+        cancelButtonText: "Seguir vendiendo",
+      });
+
+      
+  
+      // Utiliza el resultado de la alerta para tomar la acción correspondiente
+      if (result.isConfirmed) {
+        navigate("/publicaciones");
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        navigate("/vender");
+  
+        // Restablece el estado del formulario
+        setProducto({
+          titulo: "",
+          descripcion: "",
+          formato: "",
+          imagen: "",
+          precio: "",
+          aceptarTerminos: false,
+        });
+      }
+      // Puedes agregar más condiciones según sea necesario
+  
     } catch (error) {
       console.error("Error en la solicitud:", error);
-      swal(
+      Swal.fire(
         "Hubo un error al subir el producto. Por favor, inténtalo de nuevo. 🙁"
       );
     }
@@ -54,7 +87,7 @@ const Vender = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token) {
-      swal("Ups","Debes iniciar sesión para vender productos.", "warning");
+      Swal("Ups", "Debes iniciar sesión para vender productos.", "warning");
       navigate("/");
     }
   }, []);
@@ -62,7 +95,7 @@ const Vender = () => {
   return (
     <>
       <NavB />
-      <Hero title="Vende tus productos de forma gratuita" />
+      <Hero title="Vende tus productos de forma gratuita." />
       <div className="contenedorMain body">
         <div className="venderContenedor">
           <h1>Vender</h1>
@@ -110,8 +143,31 @@ const Vender = () => {
             onChange={handleInputChange}
           />
           <br />
-          <Button variant="dark" size="lg" onClick={handleVender}>
-              Publicar
+          <Form.Check
+            type="checkbox"
+            id="aceptarTerminos"
+            label="Acepto los términos y condiciones"
+            name="aceptarTerminos"
+            checked={producto.aceptarTerminos}
+            onChange={handleInputChange}
+          />
+          <br />
+          <Button
+            variant="dark"
+            size="lg"
+            onClick={handleVender}
+            disabled={
+              !(
+                producto.titulo &&
+                producto.descripcion &&
+                producto.formato &&
+                producto.imagen &&
+                producto.precio &&
+                producto.aceptarTerminos
+              )
+            }
+          >
+            Publicar
           </Button>
         </div>
       </div>

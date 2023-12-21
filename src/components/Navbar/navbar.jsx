@@ -63,12 +63,12 @@ const NavB = () => {
       <Container>
         <Navbar.Brand href="/landing">
           <img
-            className="me-3"
-            src="./img/logo.png"
-            alt="logo"
-            width="48"
-            height="38"
-          />
+            alt="Logo"
+            src="../../../public/logo.png"
+            width="30"
+            height="30"
+            class="d-inline-block align-top"
+          />{" "}
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

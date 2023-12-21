@@ -9,7 +9,7 @@ const Footer = () => {
           <div className="row">
             <div className="col-md-6 col-lg-5 col-12 ft-1">
               <h3>
-                <span> Retro </span>Groove
+                <span>Retro </span>Groove
               </h3>
               <p>
                 Sumérgete en el encanto nostálgico de nuestra tienda de música
@@ -18,25 +18,25 @@ const Footer = () => {
               </p>
             </div>
             <div className="footer-icons col-md-6 col-lg-3 col-12 ft-2">
-              <h5>Nuestras Redes</h5>
+              <h5>Nuestras Redes:</h5>
               <ul>
                 <li className="nav-item mb-2">
-                  <a className="" href="/">
+                  <a className="" href="#">
                     <i class="fa-brands fa-facebook"></i>
                   </a>
                 </li>
                 <li className="nav-item mb-2">
-                  <a className="" href="/">
+                  <a className="" href="#">
                     <i class="fa-brands fa-twitter"></i>
                   </a>
                 </li>
                 <li className="nav-item mb-2">
-                  <a className="" href="/">
+                  <a className="" href="#">
                     <i class="fa-brands fa-instagram"></i>
                   </a>
                 </li>
                 <li className="nav-item mb-2">
-                  <a className="" href="/">
+                  <a className="" href="#">
                     <i class="fa-brands fa-linkedin-in"></i>
                   </a>
                 </li>
@@ -51,7 +51,7 @@ const Footer = () => {
                 <i class="fa-solid fa-envelope"></i> contacto@retrogroove.com
               </p>
               <p>
-                <i class="fa-solid fa-paper-plane"></i> Latam
+                <i class="fa-solid fa-paper-plane"></i> Latam.
               </p>
             </div>
           </div>

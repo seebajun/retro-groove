@@ -1,0 +1,14 @@
+.custom-pagination .page-link {
+    color: black; /* Cambia el color del texto a negro */
+    background-color: white; /* Cambia el color de fondo a blanco si es necesario */
+  }
+  .custom-pagination .page-link:hover {
+    color: white; /* Cambia el color del texto a blanco en el estado de hover */
+    background-color: #3C322B;/* Cambia el color de fondo a negro en el estado de hover */
+    border-color: #3C322B;; /* Cambia el color del borde de la página activa a negro */
+  }
+  .custom-pagination .page-item.active .page-link {
+    background-color: #3C322B;; /* Cambia el color de fondo de la página activa a negro */
+    border-color: #3C322B;; /* Cambia el color del borde de la página activa a negro */
+    color: white; /* Cambia el color del texto de la página activa a blanco */
+  }

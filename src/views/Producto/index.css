@@ -52,26 +52,9 @@
   width: 48%;
 }
 
-
-
-/* .containerCard {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  border: 1px solid black;
-}
-
-.cardContent {
-  margin: 1rem;
-  position: relative;
-}
-
- */
-
 @media (max-width: 768px) {
   .contenedorCard {
-    background-color: #f6f1e4;
+    background-color: #fff;
     border: 1px palegoldenrod;
     border-radius: 8px;
     display: flex;

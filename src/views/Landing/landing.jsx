@@ -21,7 +21,7 @@ const Landing = () => {
   return (
     <>
       <NavB />
-      <Hero title="Amplia tu coleccion musical en Retro Groove" />
+      <Hero title="Amplia tu coleccion musical en Retro Groove." />
       <Posts className="body" />
       <Footer />
     </>
