@@ -12,6 +12,7 @@ import Registrarse from "./views/Registrarse/Registrarse.jsx";
 import Favoritos from "./views/Likes/Likes.jsx";
 import Vender from "./views/Vender/Vender.jsx";
 import MisPosts from "./views/misPosts/MisPosts.jsx";
+import Carrito from "./views/Carrito/Carrito.jsx"
 
 function App() {
   const productos = require("./productos.json");
@@ -32,6 +33,7 @@ function App() {
           <Route path="/registrarse" element={<Registrarse />} />
           <Route path="/producto/:titulo" element={<Producto />} />
           <Route path="/publicaciones" element={<MisPosts />} />
+          <Route path="/carrito" element={<Carrito />} />
         </Routes>
       </BrowserRouter>
     </Context.Provider>
