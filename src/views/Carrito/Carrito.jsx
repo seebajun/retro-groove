@@ -12,7 +12,7 @@ const Carrito = () => {
   const [total, setTotal] = useState(0);
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
-  const urlServer = "http://localhost:2999";
+  const urlServer = "https://retrogrooveapi.onrender.com/";
   const endpoint = "/carrito";
 
   const handleGetCarrito = async () => {

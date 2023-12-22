@@ -7,11 +7,10 @@ import Swal from "sweetalert2";
 const LikeItem = ({ productos }) => {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
-  const urlServer = "http://localhost:2999";
+  const urlServer = "https://retrogrooveapi.onrender.com/";
   const endpointEliminarProducto = `/producto/${productos.id}`;
 
   const handleEliminarProducto = async () => {
-    
     const result = await Swal.fire({
       title: "¿Estás seguro?",
       text: "¡No podrás revertir esto!",
@@ -24,7 +23,6 @@ const LikeItem = ({ productos }) => {
     });
 
     if (!result.isConfirmed) {
-      
       return;
     }
 
@@ -36,7 +34,7 @@ const LikeItem = ({ productos }) => {
         },
       });
       Swal.fire("¡Eliminado!", "El producto ha sido eliminado.", "success");
-     
+
       window.location.reload();
     } catch (error) {
       console.error("Error al eliminar producto:", error);

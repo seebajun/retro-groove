@@ -13,7 +13,7 @@ const Likes = () => {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
   console.log("Token:", token);
-  const urlServer = "http://localhost:2999";
+  const urlServer = "https://retrogrooveapi.onrender.com/";
   const endpoint = "/favoritos";
   console.log("Token:", token);
   const handleGetLikes = async () => {
@@ -61,6 +61,6 @@ const Likes = () => {
       <Footer />
     </>
   );
-}
+};
 
 export default Likes;
