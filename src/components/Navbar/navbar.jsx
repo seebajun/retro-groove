@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import axios from "axios";
-import "./navbar.css";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import "./navbar.css";
+import logo from "./logosinbordes.png"
 
 const NavB = () => {
   const navigate = useNavigate();
@@ -62,12 +63,13 @@ const NavB = () => {
     <Navbar className="navbar" expand="lg" variant="dark">
       <Container>
         <Navbar.Brand href="/landing">
-          {/* <img
-            alt="logo"
-            src="../../assets/public/logo.png"
-            class="d-inline-block align-top"
-          /> */}
-          Retro Groove
+          <img
+            alt="Logo"
+            src={logo}
+            width="auto"
+            height="50"
+            class=""
+          />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -82,11 +84,12 @@ const NavB = () => {
             <Nav.Link href="/publicaciones" className="ml-auto">
               <i class="fa-solid fa-shop"></i> Mis publicaciones
             </Nav.Link>
-            <Nav.Link href="/publicaciones" className="ml-auto">
+            <Nav.Link href="/carrito" className="ml-auto">
               <i class="fa-solid fa-cart-shopping"></i> Carrito
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
+        <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="d-flex">
           <Nav.Link href="/perfil" className="justify-content-end">
             <i class="fa-regular fa-user"></i> Bienvenido, {user.nombre}
@@ -95,6 +98,7 @@ const NavB = () => {
             <i class="fa-solid fa-power-off"></i>
           </Nav.Link>
         </Nav>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );

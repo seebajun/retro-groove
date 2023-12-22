@@ -91,6 +91,64 @@ const Producto = () => {
     }
   };
 
+  const agregarAlCarrito = async () => {
+    const urlServer = "http://localhost:2999";
+    const endpointTitulo = `/producto/${titulo}`;
+    const token = localStorage.getItem("token");
+
+    try {
+      const responseIdProducto = await axios.get(urlServer + endpointTitulo, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      const endpointCarrito = "/carrito/";
+      const verificarEnCarrito = await axios.get(urlServer + endpointCarrito, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      console.log("ID del producto:", responseIdProducto.data.id);
+      console.log("Productos en el carrito:", verificarEnCarrito.data);
+
+      const productoEnCarrito = verificarEnCarrito.data.find(
+        (item) => item.id_productos === responseIdProducto.data.id
+      );
+
+      console.log("Producto encontrado en carrito:", productoEnCarrito);
+
+      if (productoEnCarrito) {
+        swal(
+          "Ya está en el carrito",
+          "El producto ya existe en el carrito",
+          "warning"
+        );
+      } else {
+        await axios.post(
+          urlServer + endpointCarrito + `${responseIdProducto.data.id}`,
+          {},
+          {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        console.log("Producto agregado al carrito correctamente");
+        swal(
+          "Excelente!",
+          "Producto agregado al carrito correctamente",
+          "success"
+        );
+      }
+    } catch (error) {
+      console.error("Error al agregar producto al carrito:", error);
+    }
+  };
+
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token) {
@@ -111,7 +169,12 @@ const Producto = () => {
               <h5>{`Precio: $${producto.precio}`}</h5>
               <h5>{producto.descripcion}</h5>
               <div className="botones">
-                <Button variant="btn btn-dark btn-lg">🛒</Button>
+                <Button
+                  variant="btn btn-dark btn-lg"
+                  onClick={agregarAlCarrito}
+                >
+                  🛒
+                </Button>
                 <Button
                   variant="btn btn-dark btn-lg"
                   onClick={agregarAFavoritos}
