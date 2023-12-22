@@ -22,7 +22,7 @@ const Producto = () => {
 
   useEffect(() => {
     const obtenerProducto = async () => {
-      const urlServer = "https://retrogrooveapi.onrender.com";
+      const urlServer = "http://retrogrooveapi.onrender.com";
       const endpoint = `/producto/${titulo}`;
       const token = localStorage.getItem("token");
 

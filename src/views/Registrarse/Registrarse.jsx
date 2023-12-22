@@ -36,7 +36,7 @@ const Registro = () => {
       return;
     }
 
-    const urlRegistro = "https://retrogrooveapi.onrender.com";
+    const urlRegistro = "http://retrogrooveapi.onrender.com";
     const endpoint = "/registrarse";
 
     try {

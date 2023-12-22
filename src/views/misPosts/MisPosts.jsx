@@ -11,7 +11,7 @@ const MisPosts = () => {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
   console.log("Token:", token);
-  const urlServer = "https://retrogrooveapi.onrender.com";
+  const urlServer = "http://retrogrooveapi.onrender.com";
   const endpoint = "/publicaciones";
   console.log("Token:", token);
   const handleGetLikes = async () => {

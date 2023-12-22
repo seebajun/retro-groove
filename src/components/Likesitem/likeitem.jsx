@@ -7,7 +7,7 @@ import swal from "sweetalert";
 const LikeItem = ({ productos }) => {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
-  const urlServer = "https://retrogrooveapi.onrender.com";
+  const urlServer = "http://retrogrooveapi.onrender.com";
   const endpointEliminarFavorito = `/favoritos/${productos.id_productos}`;
 
   const handleEliminarFavorito = async () => {

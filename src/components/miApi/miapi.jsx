@@ -19,7 +19,7 @@ function Posts() {
   const [selectedFormat, setSelectedFormat] = useState("");
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
-  const urlServer = "https://retrogrooveapi.onrender.com";
+  const urlServer = "http://retrogrooveapi.onrender.com";
   const endpoint = "/landing";
 
   const handleGetPosts = async () => {

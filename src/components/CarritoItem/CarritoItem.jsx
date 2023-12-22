@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 const CarritoItem = ({ productos }) => {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
-  const urlServer = "https://retrogrooveapi.onrender.com";
+  const urlServer = "http://retrogrooveapi.onrender.com";
   const endpointEliminarProducto = `/carrito/${productos.id_productos}`;
 
   const handleEliminarProducto = async () => {
