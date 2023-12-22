@@ -61,7 +61,15 @@ const NavB = () => {
   return (
     <Navbar className="navbar" expand="lg" variant="dark">
       <Container>
-        <Navbar.Brand href="/landing">Retrogroove</Navbar.Brand>
+        <Navbar.Brand href="/landing">
+          <img
+            alt="Logo"
+            src="https://ibb.co/[url=https://ibb.co/Vv5m8NV][img]https://i.ibb.co/Hr3dQ27/logo.png[/img][/url]"
+            width="30"
+            height="30"
+            class="d-inline-block align-top"
+          />{" "}
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="d-flex">
@@ -75,19 +83,21 @@ const NavB = () => {
             <Nav.Link href="/publicaciones" className="ml-auto">
               <i class="fa-solid fa-shop"></i> Mis publicaciones
             </Nav.Link>
-            <Nav.Link href="/publicaciones" className="ml-auto">
+            <Nav.Link href="/carrito" className="ml-auto">
               <i class="fa-solid fa-cart-shopping"></i> Carrito
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        <Nav className="d-flex">
-          <Nav.Link href="/perfil" className="justify-content-end">
-            <i class="fa-regular fa-user"></i> Bienvenido, {user.nombre}
-          </Nav.Link>
-          <Nav.Link href="" className="off " onClick={handleLogout}>
-            <i class="fa-solid fa-power-off"></i>
-          </Nav.Link>
-        </Nav>
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="d-flex">
+            <Nav.Link href="/perfil" className="justify-content-end">
+              <i class="fa-regular fa-user"></i> Bienvenido, {user.nombre}
+            </Nav.Link>
+            <Nav.Link href="" className="off " onClick={handleLogout}>
+              <i class="fa-solid fa-power-off"></i>
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );
