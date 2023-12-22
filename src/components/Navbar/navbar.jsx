@@ -61,15 +61,7 @@ const NavB = () => {
   return (
     <Navbar className="navbar" expand="lg" variant="dark">
       <Container>
-        <Navbar.Brand href="/landing">
-          <img
-            alt="Logo"
-            src="../../../public/logo.png"
-            width="30"
-            height="30"
-            class="d-inline-block align-top"
-          />{" "}
-        </Navbar.Brand>
+        <Navbar.Brand href="/landing">Retrogroove</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="d-flex">

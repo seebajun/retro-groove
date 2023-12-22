@@ -108,10 +108,12 @@ const Producto = () => {
             <img src={producto.imagen} alt={producto.titulo} width={500} />
             <div className="cardText">
               <h1>{producto.titulo}</h1>
+              <h5>{`Descripcion: ${producto.descripcion}`}</h5>
               <h5>{`Precio: $${producto.precio}`}</h5>
-              <h5>{producto.descripcion}</h5>
               <div className="botones">
-                <Button variant="btn btn-dark btn-lg">🛒</Button>
+                <Button variant="btn btn-dark btn-lg">
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </Button>
                 <Button
                   variant="btn btn-dark btn-lg"
                   onClick={agregarAFavoritos}

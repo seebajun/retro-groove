@@ -6,6 +6,8 @@
   max-width: auto;
   box-shadow: 10px 10px 11px 3px rgba(128, 128, 128, 0.52);
   position: relative;
+  width: 50%;
+  height: 60%;
 }
 
 .cardContent {
@@ -13,29 +15,36 @@
   flex-direction: row;
   align-items: center;
   margin: 1rem;
+  min-width: 30%;
+  min-height: 50%;
 }
 
 .cardContent img{
-  max-width: 90%;
+  max-width: 50%;
+  max-height: 80%;
 }
 
 .cardText{
   display: flex;
   flex-direction: column;
   height: 100%;
-  position: relative
-
+  position: relative;
+  align-items: center;
+  
+  
 }
 
 .cardText h1{
   font-family: 'Permanent Marker', cursive;
-  font-size: 48px;
+  font-size: 50px;
   color: #077984;
   padding: 0.5rem;
 }
 
 .cardText h5{
   padding: 0.5rem;
+  font-size: 20px;
+  
 }
 
 .botones {
@@ -70,6 +79,13 @@
   }
   .cardContent img{
     max-width: auto;
+  }
+  .cardText{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+  
   }
 
   .cardContent h1{

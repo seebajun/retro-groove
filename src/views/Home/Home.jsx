@@ -88,7 +88,7 @@ const Home = () => {
         </div>
         <div className="imagen-fondo">
           <img
-            src="" //"https://assets.stickpng.com/images/5856b3da4f6ae202fedf2794.png
+            src="https://assets.stickpng.com/images/5856b3da4f6ae202fedf2794.png"
             alt="Imagen"
             className="imagen-movil"
             id="imagen"

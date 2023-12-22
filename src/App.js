@@ -4,6 +4,7 @@ import Context, { MyProvider } from "./context/index"; // Importa MyProvider des
 import "./index.css";
 
 // Importa tus vistas
+import Carrito from "./views/Carrito/Carrito.jsx";
 import Home from "./views/Home/Home.jsx";
 import Landing from "./views/Landing/Landing.jsx";
 import Perfil from "./views/Perfil/Perfil.jsx";
@@ -32,6 +33,7 @@ function App() {
           <Route path="/registrarse" element={<Registrarse />} />
           <Route path="/producto/:titulo" element={<Producto />} />
           <Route path="/publicaciones" element={<MisPosts />} />
+          <Route path="/carrito" element={<Carrito />} />
         </Routes>
       </BrowserRouter>
     </Context.Provider>
