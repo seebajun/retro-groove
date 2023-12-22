@@ -22,7 +22,7 @@ const Home = () => {
   };
 
   const handleLogin = async () => {
-    const urlServer = "http://retrogrooveapi.onrender.com";
+    const urlServer = "https://retrogrooveapi.onrender.com";
     const endpoint = "/login";
 
     try {
