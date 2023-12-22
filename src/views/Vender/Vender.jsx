@@ -29,7 +29,7 @@ const Vender = () => {
   };
 
   const handleVender = async () => {
-    const urlServer = "https://retrogrooveapi.onrender.com/";
+    const urlServer = "https://retrogrooveapi.onrender.com";
     const endpoint = "/vender";
     const token = localStorage.getItem("token");
     console.log("Token:", token);
