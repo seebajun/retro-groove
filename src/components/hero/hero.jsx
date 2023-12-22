@@ -1,4 +1,5 @@
-// import "./hero.css";
+import React from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Hero = (props) => {
   return (

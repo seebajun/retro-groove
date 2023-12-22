@@ -53,7 +53,7 @@ const Likes = () => {
         <Row className="justify-content-center">
           {likes.map((productos) => (
             <Col xs={12} sm={6} md={4} lg={3}>
-              <LikeItem key={productos._id} productos={productos} />
+              <LikeItem key={productos.id} productos={productos} />
             </Col>
           ))}
         </Row>
