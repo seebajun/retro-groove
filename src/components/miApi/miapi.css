@@ -12,3 +12,12 @@
     border-color: #3C322B;; /* Cambia el color del borde de la página activa a negro */
     color: white; /* Cambia el color del texto de la página activa a blanco */
   }
+
+  .card {
+    height: 500px !important;
+    border-radius: 10px !important;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+  }

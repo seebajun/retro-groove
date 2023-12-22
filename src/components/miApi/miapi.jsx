@@ -103,10 +103,26 @@ function Posts() {
             </Form.Group>
           </Col>
         </Row>
-        <Row className="mt-5">
+        <br />
+        <Pagination className="justify-content-center custom-pagination">
+          {[
+            ...Array(
+              Math.ceil(filteredProducts.length / productsPerPage)
+            ).keys(),
+          ].map((pageNumber) => (
+            <Pagination.Item
+              key={pageNumber + 1}
+              active={pageNumber + 1 === currentPage}
+              onClick={() => handlePageChange(pageNumber + 1)}
+            >
+              {pageNumber + 1}
+            </Pagination.Item>
+          ))}
+        </Pagination>
+        <Row className="">
           {currentProducts.map((post) => (
-            <Col key={post._id} xs={12} sm={6} md={4} lg={3} className="">
-              <Card className="card like-item">
+            <Col key={post.id} xs={12} sm={6} md={4} lg={3}>
+              <Card className="card">
                 <Card.Img variant="top" src={post.imagen} height={250} />
                 <Card.Body>
                   <Card.Title>{post.titulo}</Card.Title>

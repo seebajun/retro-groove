@@ -5,7 +5,7 @@ import "./index.css";
 
 // Importa tus vistas
 import Home from "./views/Home/Home.jsx";
-import Landing from "./views/Landing/Landing.jsx";
+import Landing from "./views/Landing/landing.jsx";
 import Perfil from "./views/Perfil/Perfil.jsx";
 import Producto from "./views/Producto/Producto.jsx";
 import Registrarse from "./views/Registrarse/Registrarse.jsx";
