@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import axios from "axios";
-import "./navbar.css";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import "./navbar.css";
+import logo from "./logosinbordes.png"
 
 const NavB = () => {
   const navigate = useNavigate();
@@ -64,11 +65,11 @@ const NavB = () => {
         <Navbar.Brand href="/landing">
           <img
             alt="Logo"
-            src="https://ibb.co/[url=https://ibb.co/Vv5m8NV][img]https://i.ibb.co/Hr3dQ27/logo.png[/img][/url]"
-            width="30"
-            height="30"
-            class="d-inline-block align-top"
-          />{" "}
+            src={logo}
+            width="auto"
+            height="50"
+            class=""
+          />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
