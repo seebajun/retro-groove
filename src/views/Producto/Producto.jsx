@@ -115,7 +115,7 @@ const Producto = () => {
       console.log("Productos en el carrito:", verificarEnCarrito.data);
 
       const productoEnCarrito = verificarEnCarrito.data.find(
-        (item) => item.id === responseIdProducto.data.id
+        (item) => item.id_productos === responseIdProducto.data.id
       );
 
       console.log("Producto encontrado en carrito:", productoEnCarrito);
