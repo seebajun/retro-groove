@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 import axios from "axios";
+import Vinilo from "./img/5856b3da4f6ae202fedf2794.png";
 
 import "./index.css";
 
@@ -87,12 +88,7 @@ const Home = () => {
           <h1></h1>
         </div>
         <div className="imagen-fondo">
-          <img
-            src="https://assets.stickpng.com/images/5856b3da4f6ae202fedf2794.png"
-            alt="Imagen"
-            className="imagen-movil"
-            id="imagen"
-          />
+          <img src={Vinilo} alt="Imagen" className="imagen-movil" id="imagen" />
         </div>
 
         <div className="card-login">

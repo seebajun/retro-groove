@@ -11,7 +11,7 @@ import Hero from "../../components/hero/hero";
 
 const Perfil = () =>{
         const navigate = useNavigate();
-    //consumir api de usuario
+    
         const [user, setUser] = useState({
             nombre: "",
             apellido: "",

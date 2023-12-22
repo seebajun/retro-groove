@@ -11,7 +11,7 @@ const LikeItem = ({ productos }) => {
   const endpointEliminarProducto = `/producto/${productos.id}`;
 
   const handleEliminarProducto = async () => {
-    // Mostrar un cuadro de diálogo de confirmación personalizado con swal
+    
     const result = await Swal.fire({
       title: "¿Estás seguro?",
       text: "¡No podrás revertir esto!",
@@ -24,7 +24,7 @@ const LikeItem = ({ productos }) => {
     });
 
     if (!result.isConfirmed) {
-      // El usuario canceló la eliminación
+      
       return;
     }
 
@@ -36,7 +36,7 @@ const LikeItem = ({ productos }) => {
         },
       });
       Swal.fire("¡Eliminado!", "El producto ha sido eliminado.", "success");
-      // Recargar la página después de eliminar el producto
+     
       window.location.reload();
     } catch (error) {
       console.error("Error al eliminar producto:", error);
