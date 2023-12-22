@@ -15,11 +15,8 @@ import Vender from "./views/Vender/Vender.jsx";
 import MisPosts from "./views/misPosts/MisPosts.jsx";
 
 function App() {
-  const productos = require("./productos.json");
-  const [data, setData] = useState(productos);
-
   const [total, setTotal] = useState(0);
-  const sharedState = { data, setData, total, setTotal };
+  const sharedState = { total, setTotal };
 
   return (
     <Context.Provider value={sharedState}>

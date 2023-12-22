@@ -98,7 +98,7 @@ const Home = () => {
         <div className="card-login">
           <div className="card-body">
             <div className="titulo">
-              <h1 className="card-tittle">Bienvenido!</h1>
+              <h1 className="card-tittle">¡Bienvenido!</h1>
             </div>
             <br />
             <h4>Iniciar Sesión</h4>

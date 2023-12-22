@@ -173,7 +173,7 @@ const Producto = () => {
                   variant="btn btn-dark btn-lg"
                   onClick={agregarAlCarrito}
                 >
-                  🛒
+                  <i class="fa-solid fa-cart-shopping"></i>
                 </Button>
                 <Button
                   variant="btn btn-dark btn-lg"

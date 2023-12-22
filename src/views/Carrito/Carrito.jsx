@@ -6,71 +6,7 @@ import axios from "axios";
 import "./carrito.css";
 import Footer from "../../components/footer/Footer.jsx";
 import Hero from "../../components/hero/hero.jsx";
-import {
-  Container,
-  Row,
-  Col,
-  Card,
-  Button,
-  Pagination,
-  Table,
-} from "react-bootstrap";
 
-/*const Carrito = () => {
-  const [carrito, setCarrito] = useState([]);
-  const navigate = useNavigate();
-  const token = localStorage.getItem("token");
-  const urlServer = "http://localhost:2999";
-  const endpoint = "/carrito";
-
-  const handleGetCarrito = async () => {
-    try {
-      const response = await axios.get(urlServer + endpoint, {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      console.log("response", response.data);
-      setCarrito(response.data);
-    } catch (error) {
-      console.error("Error en la solicitud:", error);
-      alert(
-        "Hubo un error al cargar los productos. Por favor, inténtalo de nuevo. 🙁"
-      );
-    }
-  };
-  useEffect(() => {
-    handleGetCarrito();
-  }, []);
-
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (!token) {
-      alert("Debes iniciar sesión para vender productos.");
-      navigate("/");
-    }
-  }, []);
-
-  return (
-    <>
-      <Navbar />
-      <Hero title="Mi carrito musical" />
-      <div className="miContainer cart body">
-        <ul className="miLista">
-          {carrito.map((producto) => (
-            <li key={producto._id}>
-              <CarritoItem productos={producto} />
-            </li>
-          ))}
-        </ul>
-      </div>
-      <Footer />
-    </>
-  );
-};
-
-export default Carrito;*/
 const Carrito = () => {
   const [carrito, setCarrito] = useState([]);
   const [total, setTotal] = useState(0);

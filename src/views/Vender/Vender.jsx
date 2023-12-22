@@ -56,15 +56,11 @@ const Vender = () => {
         cancelButtonText: "Seguir vendiendo",
       });
 
-      
-  
-      // Utiliza el resultado de la alerta para tomar la acción correspondiente
       if (result.isConfirmed) {
         navigate("/publicaciones");
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         navigate("/vender");
-  
-        // Restablece el estado del formulario
+
         setProducto({
           titulo: "",
           descripcion: "",
@@ -74,8 +70,6 @@ const Vender = () => {
           aceptarTerminos: false,
         });
       }
-      // Puedes agregar más condiciones según sea necesario
-  
     } catch (error) {
       console.error("Error en la solicitud:", error);
       Swal.fire(

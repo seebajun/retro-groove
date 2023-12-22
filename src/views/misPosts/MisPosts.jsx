@@ -4,7 +4,7 @@ import Navbar from "../../components/Navbar/navbar.jsx";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Footer from "../../components/footer/Footer.jsx";
-import { Container, Row, Col, Card, Button, Pagination } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 
 const MisPosts = () => {
   const [likes, setLikes] = useState([]);

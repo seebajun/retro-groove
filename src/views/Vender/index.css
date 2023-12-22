@@ -7,6 +7,9 @@
   min-height: 100vh;
   width: 100%;
 }
+.contenedor{
+  background-color: #fff9eb;
+}
 
 .venderContenedor {
   background-color: #fff;
